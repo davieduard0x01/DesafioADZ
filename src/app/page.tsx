@@ -5,7 +5,6 @@ import { KeyField, MODELOS, useSessionState } from '@/components/KeyField';
 import { Stage } from '@/components/Stage';
 import { useTurn } from '@/components/useTurn';
 
-const REPO = 'https://github.com/davieduard0x01/DesafioADZ';
 
 export default function Home() {
   const [apiKey, setApiKey] = useSessionState('adz.openrouter_key', '');
@@ -26,9 +25,6 @@ export default function Home() {
               limpar sessão
             </button>
           )}
-          <a href={REPO} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
-            repositório ↗
-          </a>
         </div>
       </header>
 

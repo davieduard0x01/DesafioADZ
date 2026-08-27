@@ -4,7 +4,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { PendingAction, PermissionDecision } from '@/harness/types';
 import { ConfirmDialog } from './ConfirmDialog';
-import { PROMPTS } from './replay';
+import { PROMPTS } from './ui-text';
 import { TraceView } from './TraceView';
 import type { Status, Turn } from './useTurn';
 

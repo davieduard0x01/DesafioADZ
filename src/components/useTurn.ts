@@ -2,7 +2,7 @@
 
 /**
  * Cliente do turno. Fala com `POST /api/chat` (NDJSON de `StreamFrame`) quando há
- * chave, e com o roteiro determinístico de `replay.ts` quando não há.
+ * chave. Sem chave, manda `replay: true` e a mesma rota devolve o roteiro determinístico.
  *
  * Os dois caminhos consomem o MESMO tipo de frame — a UI não sabe qual está ativo,
  * o que é justamente o que permite construir a interface antes do runtime.
@@ -18,7 +18,6 @@ import {
   type StreamFrame,
   type TraceEvent,
 } from '@/harness/types';
-import { scriptFor, type ReplayScript } from './replay';
 
 export interface Turn {
   readonly id: string;
@@ -53,7 +52,6 @@ export function useTurn(apiKey: string, model: string) {
   const sessionId = useRef<string>('');
   if (!sessionId.current) sessionId.current = novoId();
   /** Roteiro do turno em replay, guardado para retomar depois da decisão do gate. */
-  const roteiro = useRef<ReplayScript | null>(null);
   const cancelado = useRef(false);
 
   const aplicar = useCallback((frame: StreamFrame) => {
@@ -109,16 +107,6 @@ export function useTurn(apiKey: string, model: string) {
     }
   }, []);
 
-  const tocarReplay = useCallback(
-    async (lista: readonly StreamFrame[]) => {
-      for (const frame of lista) {
-        if (cancelado.current) return;
-        await new Promise((r) => setTimeout(r, atraso(frame)));
-        aplicar(frame);
-      }
-    },
-    [aplicar],
-  );
 
   const chamarApi = useCallback(
     async (body: ChatRequest) => {
@@ -157,7 +145,11 @@ export function useTurn(apiKey: string, model: string) {
         for (const linha of linhas) {
           if (!linha.trim()) continue;
           try {
-            aplicar(JSON.parse(linha) as StreamFrame);
+            const frame = JSON.parse(linha) as StreamFrame;
+            // Sem chave o turno é replay: o servidor entrega tudo de uma vez, então o
+            // ritmo de leitura fica por conta do cliente. Com chave, o modelo já pausa sozinho.
+            if (!apiKey) await new Promise((r) => setTimeout(r, atraso(frame)));
+            aplicar(frame);
           } catch {
             /* linha parcial ou inválida: ignora em vez de derrubar o turno */
           }
@@ -176,16 +168,9 @@ export function useTurn(apiKey: string, model: string) {
       setStatus('running');
       setTurns((atuais) => [...atuais, { id: novoId(), userText: texto, events: [], reply: '', running: true }]);
 
-      if (!apiKey) {
-        const script = scriptFor(texto);
-        roteiro.current = script;
-        await tocarReplay(script.frames);
-        return;
-      }
-      roteiro.current = null;
-      await chamarApi({ sessionId: sessionId.current, message: texto, model });
+      await chamarApi({ sessionId: sessionId.current, message: texto, model, replay: !apiKey });
     },
-    [apiKey, chamarApi, model, status, tocarReplay],
+    [apiKey, chamarApi, model, status],
   );
 
   const decidir = useCallback(
@@ -195,20 +180,13 @@ export function useTurn(apiKey: string, model: string) {
       setStatus('running');
       setTurns((atuais) => atuais.map((t, i) => (i === atuais.length - 1 ? { ...t, running: true } : t)));
 
-      const script = roteiro.current;
-      if (!apiKey && script) {
-        const cauda = decisao.decision === 'aprovar' ? script.aprovar : script.negar;
-        await tocarReplay(cauda ?? []);
-        return;
-      }
-      await chamarApi({ sessionId: sessionId.current, decision: decisao, model });
+      await chamarApi({ sessionId: sessionId.current, decision: decisao, model, replay: !apiKey });
     },
-    [apiKey, chamarApi, model, pending, tocarReplay],
+    [apiKey, chamarApi, model, pending],
   );
 
   const limpar = useCallback(() => {
     cancelado.current = true;
-    roteiro.current = null;
     sessionId.current = novoId();
     setTurns([]);
     setArtifacts([]);

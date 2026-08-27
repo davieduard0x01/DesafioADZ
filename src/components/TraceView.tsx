@@ -14,7 +14,7 @@
  */
 import { useEffect, useMemo, useState } from 'react';
 import type { EdgeName, NodeName, ToolLayer, TraceEvent } from '@/harness/types';
-import { NODE_DESC } from './replay';
+import { NODE_DESC } from './ui-text';
 
 // ---------------------------------------------------------------------------
 
