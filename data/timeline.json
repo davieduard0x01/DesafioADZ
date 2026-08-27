@@ -101,7 +101,7 @@
         "campanha_omega3",
         "canal_meta_ads"
       ],
-      "resumo": "CAUSA-RAIZ: às 09:12, a pedido do Rafael, Carolina troca a URL de destino do omega3_vid_prova_social_v2 pelo encurtador hwy.link/o3ps, para que o link caiba no card de compartilhamento do WhatsApp e o cliente consiga contar cliques na ferramenta dele. O encurtador redireciona sem repassar a query string — as UTMs param de chegar ao site a partir desse momento.",
+      "resumo": "Às 09:12, a pedido do Rafael, Carolina troca a URL de destino do omega3_vid_prova_social_v2 por hwy.link/o3ps, para o link caber no card de compartilhamento do WhatsApp e o cliente conseguir contar cliques na ferramenta dele.",
       "trecho": "Rafael: \"Dá pra encurtar esse link? No WhatsApp ele vira um monstro e ninguém clica.\" — Carolina: \"Dá sim, troco agora.\""
     },
     {

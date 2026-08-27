@@ -395,9 +395,9 @@ const criativos = ADS.map((ad) => {
         frequency: r2(rs.reduce((a, r) => a + r.frequency, 0) / rs.length), conversions: cv, cpa: r2(cv ? sp / cv : 0) };
     }),
     observacao: saturado
-      ? "Frequência subiu de 2,1 para 5,6 e o CTR caiu de 1,92% para 0,71% em 4 semanas. CPA quase dobrou. Público esgotado — candidato legítimo a pausa."
+      ? "Frequência subiu de 2,1 para 5,6 e o CTR caiu de 1,92% para 0,71% em 4 semanas."
       : ad.nome === AD_AFETADO
-        ? `Link trocado por encurtador em ${DATA_TROCA}. O anúncio continua vendendo (o pixel registra), mas as UTMs não chegam mais ao CRM.`
+        ? `Link de destino alterado em ${DATA_TROCA}.`
         : ["whey_est_combo_v1", "creatina_est_pote_v2"].includes(ad.nome)
           ? "CTA genérico e copy sem oferta concreta. CTR abaixo de 1%."
           : undefined,
@@ -448,7 +448,7 @@ for (const cr of criativos)
 const tarefas = [
   { id: "tarefa_aprovar_ugc", label: "Aprovar omega3_vid_ugc_rotina_v1", props: { status: "aguardando_cliente", desde: "2026-08-20", prazo: "2026-08-27", impacto: "É a substituição planejada do carrossel saturado. Cada dia parado é verba rodando no criativo velho." } },
   { id: "tarefa_aprovar_combo_setembro", label: "Aprovar whey_est_combo_setembro_v1", props: { status: "aguardando_cliente", desde: "2026-08-21", prazo: "2026-08-28", impacto: "A campanha precisa subir dia 01/09; sem aprovação até 28/08 o combo perde a primeira quinzena." } },
-  { id: "tarefa_investigar_cpa_omega3", label: "Investigar queda das vendas atribuídas de Ômega 3", props: { status: "em_andamento", desde: "2026-08-18", prazo: "2026-08-27", responsavel: "Carolina Nunes", impacto: "Rafael cobrou explicação em 19/08. O faturamento não caiu; o relatório de atribuição sim." } },
+  { id: "tarefa_investigar_cpa_omega3", label: "Investigar queda das vendas atribuídas de Ômega 3", props: { status: "em_andamento", desde: "2026-08-18", prazo: "2026-08-27", responsavel: "Carolina Nunes", impacto: "Rafael cobrou explicação no grupo em 19/08." } },
   { id: "tarefa_pausar_carrossel", label: "Pausar omega3_carrossel_beneficios_v1 e subir substituto", props: { status: "proposta", desde: "2026-08-24", prazo: "2026-08-27", responsavel: "Aline Ferraz", impacto: "Frequência 5,6 e CTR 0,71%. R$ 380 na última semana para 4 conversões." } },
   { id: "tarefa_verba_setembro", label: "Fechar verba de setembro", props: { status: "aguardando_decisao", desde: "2026-08-22", prazo: "2026-08-29", impacto: "Rafael sinalizou possível aumento para R$ 22.000 se a Ômega 3 comprovar retorno." } },
 ];
@@ -530,7 +530,7 @@ const eventos = [
   { ts: "2026-08-10T10:15:00-03:00", tipo: "alerta", ator: "Carolina Nunes", entidades: ["criativo_omega3_carrossel_beneficios_v1"],
     resumo: "Alerta de frequência: carrossel_beneficios_v1 passa de 4,4 com CTR em 1,05%. CPA da semana em R$ 81 contra R$ 43 na primeira semana." },
   { ts: "2026-08-11T09:12:00-03:00", tipo: "alteracao_campanha", ator: "Carolina Nunes", entidades: [`criativo_${AD_AFETADO}`, "campanha_omega3", "canal_meta_ads"],
-    resumo: "CAUSA-RAIZ: às 09:12, a pedido do Rafael, Carolina troca a URL de destino do omega3_vid_prova_social_v2 pelo encurtador hwy.link/o3ps, para que o link caiba no card de compartilhamento do WhatsApp e o cliente consiga contar cliques na ferramenta dele. O encurtador redireciona sem repassar a query string — as UTMs param de chegar ao site a partir desse momento.",
+    resumo: "Às 09:12, a pedido do Rafael, Carolina troca a URL de destino do omega3_vid_prova_social_v2 por hwy.link/o3ps, para o link caber no card de compartilhamento do WhatsApp e o cliente conseguir contar cliques na ferramenta dele.",
     trecho: "Rafael: \"Dá pra encurtar esse link? No WhatsApp ele vira um monstro e ninguém clica.\" — Carolina: \"Dá sim, troco agora.\"" },
   { ts: "2026-08-11T09:40:00-03:00", tipo: "whatsapp", ator: "Rafael Menezes", entidades: ["canal_whatsapp", `criativo_${AD_AFETADO}`],
     resumo: "Rafael confirma no grupo que o link encurtado ficou melhor para compartilhar. Ninguém revisa o efeito nas UTMs." },
