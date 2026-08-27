@@ -69,9 +69,18 @@ export async function POST(req: Request): Promise<Response> {
   if (body.decision) {
     const decisao = body.decision;
     return stream(async (enviar) => {
-      const retomado = replay
+      let retomado = replay
         ? await resumeReplayTurn({ sessionId, decision: decisao, onFrame: enviar })
         : await resumeTurn({ sessionId, decision: decisao, model: modelo, llm, onFrame: enviar });
+
+      // O checkpoint vive na memória do processo, e em serverless a decisão quase nunca
+      // cai na mesma instância que montou a proposta. No replay o turno é determinístico:
+      // reexecuta-se em silêncio (sem emitir frames) só para reconstruir o checkpoint,
+      // e então a retomada segue normal. É o que mantém o gate utilizável em produção.
+      if (!retomado && replay && body.message) {
+        await runReplayTurn({ sessionId, texto: String(body.message) });
+        retomado = await resumeReplayTurn({ sessionId, decision: decisao, onFrame: enviar });
+      }
       if (!retomado) {
         enviar({ type: 'fatal', message: 'Não encontrei um turno aguardando confirmação nesta sessão. Refaça o pedido e eu monto a proposta de novo.' });
       }

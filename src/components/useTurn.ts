@@ -53,6 +53,9 @@ export function useTurn(apiKey: string, model: string) {
   if (!sessionId.current) sessionId.current = novoId();
   /** Roteiro do turno em replay, guardado para retomar depois da decisão do gate. */
   const cancelado = useRef(false);
+  /** Texto do último pedido: reenviado com a decisão para o servidor poder
+   *  reconstruir o checkpoint quando a retomada cai noutra instância. */
+  const ultimoPedido = useRef<string>('');
 
   const aplicar = useCallback((frame: StreamFrame) => {
     switch (frame.type) {
@@ -168,6 +171,7 @@ export function useTurn(apiKey: string, model: string) {
       setStatus('running');
       setTurns((atuais) => [...atuais, { id: novoId(), userText: texto, events: [], reply: '', running: true }]);
 
+      ultimoPedido.current = texto;
       await chamarApi({ sessionId: sessionId.current, message: texto, model, replay: !apiKey });
     },
     [apiKey, chamarApi, model, status],
@@ -180,7 +184,7 @@ export function useTurn(apiKey: string, model: string) {
       setStatus('running');
       setTurns((atuais) => atuais.map((t, i) => (i === atuais.length - 1 ? { ...t, running: true } : t)));
 
-      await chamarApi({ sessionId: sessionId.current, decision: decisao, model, replay: !apiKey });
+      await chamarApi({ sessionId: sessionId.current, decision: decisao, message: ultimoPedido.current, model, replay: !apiKey });
     },
     [apiKey, chamarApi, model, pending],
   );
