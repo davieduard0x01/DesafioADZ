@@ -48,7 +48,7 @@ Método: nada é marcado por leitura de código. Cada item foi executado.
 - [x] Turno para em `awaiting_confirmation` com preview em PT-BR (itens, gasto, CPA, impacto, reversibilidade, como desfazer, o que acontece se negar)
 - [x] **Aprovar executa uma vez**; reenviar a mesma aprovação executa **zero** vezes
 - [x] **Negar** vai direto a `respond`, zero ações, pendência zerada
-- [x] Na interface, "negar" é o botão sólido com foco inicial; "confirmar" exige marcar que leu
+- [x] Na interface, "negar" é o botão neutro e "confirmar" só habilita após marcar que leu. **Nenhum botão recebe foco inicial** — o foco vai para o painel, senão a barra de espaço usada para rolar a leitura dispararia a decisão (bug encontrado e corrigido no teste em produção)
 
 ## Qualidade verificada
 
