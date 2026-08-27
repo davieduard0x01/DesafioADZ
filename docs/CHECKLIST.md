@@ -7,7 +7,7 @@ Método: nada é marcado por leitura de código. Cada item foi executado.
 
 ## Paper (obrigatório, peso 50%)
 
-- [x] `paper/main.pdf` existe, **10 páginas, 139 KB** (limite 3 MB — folga de 21×)
+- [x] `paper/main.pdf` existe, **11 páginas, 156 KB** (limite 3 MB — folga de 21×)
 - [x] Português do Brasil, duas colunas, hifenização e acentuação corretas
 - [x] Abstract (8–15 linhas), keywords, seções numeradas, referências
 - [x] **Figura 1** (TikZ vetorial): gestor → chat → harness → supercérebro/Apps/APIs, com legenda dizendo o que é tool, memória e App, e que o gate não é tool
@@ -25,7 +25,7 @@ Método: nada é marcado por leitura de código. Cada item foi executado.
 - [x] Tetos citados no paper (`interpret` 3, `fetch` 6, `reason` 4, ciclo 3, `act` 2) == `maxSteps` em `src/harness/state.ts`
 - [x] 12 tools, 10 leitura / 2 escrita no paper == `src/harness/tools/registry.ts`
 - [x] Aresta `act → respond` nomeada `acao_confirmada` no runtime, na legenda da Figura 2 e na §4.3
-- [x] Números do dataset citados no paper conferidos contra os JSONs: 39 nós, 76 edges, 18 eventos, 304 insights, 397 leads, 13 criativos, 544 KB
+- [x] Números do dataset citados no paper conferidos contra os JSONs: 39 nós, 76 edges, 18 eventos, 304 insights, 397 leads, 13 criativos, 462 kB de JSON
 
 ## Demo pública (peso 25%)
 

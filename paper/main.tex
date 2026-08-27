@@ -228,7 +228,7 @@ seria por conta, por perfil e versionada.}
 \code{app\_diagnostico}      & App: metodologia que devolve estrutura --- veredito, causas com evidência, hipóteses descartadas & simulado $\cdot$ visível na UI \\
 \code{propose\_ctas}         & App: gera copy; é \emph{leitura}, porque gerar não é publicar & simulado $\cdot$ visível na UI \\
 \code{pause\_ads}            & escrita; só existe no nó \code{act}, depois do gate & simulado $\cdot$ visível na UI $\cdot$ \textbf{o efeito não sai do protótipo} \\
-\code{send\_whatsapp}        & escrita; só existe no nó \code{act}, depois do gate & simulado $\cdot$ visível na UI $\cdot$ \textbf{o efeito não sai do protótipo} \\
+\code{send\_whatsapp}        & escrita; só existe no nó \code{act}, depois do gate & simulado $\cdot$ \textbf{o efeito não sai do protótipo} $\cdot$ só alcançável \emph{com} chave: nenhum dos quatro percursos gravados a propõe \\
 \midrule
 nó \code{gate} (não é tool)  & permissão como \emph{fase do fluxo}: interrompe o turno e devolve o preview antes de qualquer escrita & visível na UI --- o turno fecha em \code{awaiting\_confirmation} e a retomada é idempotente \\
 supercérebro (grafo + linha do tempo) & memória de primeira classe, acessada por tool e nunca colada no prompt & simulado (39 nós, 76 arestas, 18 eventos) $\cdot$ visível na UI pelo trace \\
@@ -630,7 +630,7 @@ ficou no desenho está nomeado no fim da seção.
 
 \subsection{O grafo, com os números}
 
-Os sete nós da Figura~\ref{fig:grafo} existem no runtime, com os tetos que a Seção~3.3
+Os nove nós da Figura~\ref{fig:grafo} existem no runtime, com os tetos que a Seção~3.3
 descreve em prosa. \code{interpret} roda no máximo três passos, sob allowlist própria de
 duas tools --- \code{graph\_query} e \code{timeline\_query} ---, porque resolver entidade
 não precisa de API de anúncio. \code{fetch} tem teto de seis passos, \code{reason} de
@@ -709,7 +709,11 @@ zerada.
 \end{itemize}
 
 É o elo mais forte entre a tese e o artefato: a regra não-negociável da Seção~3.4 é
-verificável clicando duas vezes em confirmar e contando os efeitos.
+verificável no trace: um único evento \code{action\_executed} por decisão, e
+\code{executedActions} vazio quando o gestor nega. Reenviar a mesma decisão pela API é
+recusado com \emph{``esta decisão já foi aplicada neste turno''}, sem executar nada --- e a
+interface sequer oferece o segundo clique, porque o painel fecha ao decidir. A garantia vale
+dentro da instância que atendeu o turno; o limite de infraestrutura está na Seção~5.5.
 
 \subsection{O agente não cai na armadilha do próprio dataset}
 
@@ -770,7 +774,7 @@ trace e o gate; não serve para julgar o modelo.
 
 \subsection{Os dados}
 
-São 544\,KB de JSON em sete arquivos: o supercérebro com 39 nós e 76 arestas, a linha do
+São 462\,kB de JSON em sete arquivos: o supercérebro com 39 nós e 76 arestas, a linha do
 tempo com 18 eventos, o Meta com 304 linhas diárias, 397 leads de CRM, 13 criativos, mais
 Google Analytics e Google Ads. \textbf{Tudo é fictício.} Nenhum dado de conta real da SPOT
 ou da Housewhey foi usado; os nomes vêm do enunciado do desafio, os números foram gerados.
