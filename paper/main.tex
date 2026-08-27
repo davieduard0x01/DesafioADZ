@@ -46,7 +46,9 @@ aposta de produto que sustenta o desenho: em marketing, a \emph{defensibilidade}
 resposta vale mais que a autonomia do agente. Dois recortes são declarados com o custo de
 cada um: sem sandbox/CodeAct e sem RLM completo --- apenas compactação por nó. O paper
 nomeia onde a arquitetura quebra nas quatro tarefas reais do gestor, em vez de alegar
-cobertura.
+cobertura. O desenho não ficou no papel: o harness roda numa demo pública, onde os quatro
+percursos do gestor executam ponta a ponta e o gate se comporta como a arquitetura exige ---
+aprovar executa a ação uma vez, reenviar a mesma aprovação executa zero.
 \end{abstract}
 
 \smallskip
@@ -97,8 +99,9 @@ aposta: nenhuma afirmação circula sem o lastro que a segura.
 \paragraph{Mapa.} A Seção~2 fixa o vocabulário e lê o domínio. A Seção~3 é o coração
 argumentativo: por que grafo mais ReAct mais permissão, por que não cada uma das outras
 referências isoladamente, o que é tool, o que é memória, o que é App, o que mudou no meu
-entendimento durante o estudo e quais trade-offs foram aceitos de propósito. As Seções~4
-e~5 tratam do que foi efetivamente construído e de como executá-lo. A Seção~6 nomeia onde a
+entendimento durante o estudo e quais trade-offs foram aceitos de propósito. A Seção~4
+descreve o harness que foi construído e está no ar, com um turno percorrido nó por nó, e a
+Seção~5 diz como executá-lo --- chave, modelo, dados e o que os testes cobrem. A Seção~6 nomeia onde a
 arquitetura quebra nas quatro tarefas reais do gestor, e a Seção~7 diz o que eu construiria
 em seguida --- e o que deliberadamente não construiria.
 
@@ -473,7 +476,9 @@ AI}~\cite{vo2026harness}, do qual li apenas as notas.}
 próximo passo, sob teto de passos e allowlist própria. Fora dela não há loop --- os demais
 nós são passagem única. O \textbf{gate interrompe o turno de verdade}: a resposta HTTP fecha
 em ``aguardando confirmação'' e a execução só retoma num novo pedido com a decisão do
-gestor; não existe caminho de \code{reason} direto para \code{act}. Omitidas para
+gestor; não existe caminho de \code{reason} direto para \code{act}. A aresta de \code{act}
+para \code{respond}, sem rótulo no desenho por falta de espaço, chama-se
+\code{acao\_confirmada} no runtime. Omitidas para
 legibilidade: as saídas diretas de \code{interpret} (ambiguidade de entidade: o agente
 pergunta em vez de chutar) e de \code{plan} (pedido respondível sem dado novo) para
 \code{respond}, e o caminho de erro que sai de \code{act}, idêntico ao de \code{fetch}.}
@@ -593,34 +598,197 @@ por definição --- numa conversa de trinta turnos, detalhes antigos somem e o a
 que sumiram.
 
 \textbf{Fidelidade aritmética por segurança.} Agregação feita pelo LLM erra em silêncio
-quando as linhas passam de algumas dezenas. É o custo direto de recusar o sandbox, e é o
-assunto da Seção~6.1.
+quando as linhas passam de algumas dezenas. A resposta aqui é fazer a aritmética em código
+dentro da tool (Seção~4.5), o que resolve os cruzamentos previstos --- e deixa de pé o custo
+direto de recusar o sandbox: o cruzamento que ninguém previu não tem tool. É o assunto da
+Seção~6.1.
 
 \textbf{Rigor aparente.} Um grafo bonito dá a impressão de que o sistema é determinístico.
 Ele não é: a decisão de qual edge tomar continua sendo do modelo na maioria dos casos.
 
 % ---------------------------------------------------------------------------
-% TODO-PASSADA-2 =============================================================
-% Esta seção só pode ser escrita depois que o protótipo estiver rodando.
-% Conteúdo previsto: (a) o que o avaliador vê na demo, sem uma única afirmação
-% que não se confirme abrindo a URL; (b) um turno completo descrito passo a
-% passo, nó por nó, com as tools realmente chamadas. Responde P8 do roteiro.
-% NÃO ESCREVER NADA ESPECULATIVO AQUI.
-% ============================================================================
 \section{Sistema}
 
-\textit{[Seção preenchida na revisão final, a partir do protótipo executado. Nada é
-afirmado aqui antes de ser verificável.]}
+A arquitetura das seções anteriores foi implementada e está no ar. A demo é pública em
+\url{https://desafio-adz-harness.vercel.app}: responde HTTP 200 sem login e sem cookie,
+hospedada na Vercel. Esta seção afirma apenas o que se confirma abrindo essa URL --- todo
+número abaixo veio de uma execução contra a rota real do chat, não de estimativa. O que
+ficou no desenho está nomeado no fim da seção.
 
-% TODO-PASSADA-2 =============================================================
-% Conteúdo previsto: URL da demo; como o avaliador cola a OPENROUTER_API_KEY e
-% onde ela é guardada; seletor de modelo; o que é mock e o que é real nos
-% datasets; o que dá para testar. Responde P9 e P10 do roteiro.
-% ============================================================================
+\subsection{O grafo, com os números}
+
+Os sete nós da Figura~\ref{fig:grafo} existem no runtime, com os tetos que a Seção~3.3
+descreve em prosa. \code{interpret} roda no máximo três passos, sob allowlist própria de
+duas tools --- \code{graph\_query} e \code{timeline\_query} ---, porque resolver entidade
+não precisa de API de anúncio. \code{fetch} tem teto de seis passos, \code{reason} de
+quatro, e o ciclo \code{fetch} $\leftrightarrow$ \code{reason} fecha em três idas e voltas.
+\code{act} tem teto de dois. O catálogo é o da Tabela~\ref{tab:tools}: doze tools, dez de
+leitura e duas de escrita, cada uma declarando o efeito e os nós de onde pode ser chamada.
+
+A Tabela~\ref{tab:percursos} mostra os quatro pedidos típicos do gestor medidos nessa rota.
+Duas coisas nela interessam mais que as contagens. A primeira: os caminhos \emph{diferem} ---
+T1 termina em \code{gate}, com o turno em \code{awaiting\_confirmation}, e os outros três
+terminam em \code{respond}. A segunda: T1 entrega os artefatos ao Palco \textbf{antes} da
+confirmação. O gestor vê a lista de criativos e os três \emph{diffs} de CTA propostos, e só
+então decide. Preview que chega depois da decisão não é preview.
+
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Os quatro percursos, medidos na rota real do chat. T1 é o único que para no
+\code{gate}; os outros três seguem para \code{respond}. A coluna ``Palco'' lista os
+artefatos entregues à interface.}
+\label{tab:percursos}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Tarefa & Tools & Termina em & Palco \\
+\midrule
+T1 pausar criativos & 5 & \code{gate} (halt) & \code{creative\_list}, \\
+                    &   &                    & 3$\times$\code{cta\_diff} \\
+T2 diagnóstico      & 7 & \code{respond}     & \code{diagnostic}, \\
+                    &   &                    & 2$\times$\code{metrics\_table} \\
+T3 pauta            & 5 & \code{respond}     & \code{agenda} \\
+T4 cruzamento       & 4 & \code{respond}     & \code{metrics\_table} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Um turno completo, nó por nó}
+
+T2 --- ``por que caíram as vendas da Ômega 3 essa semana?'' --- é o percurso mais longo:
+\code{interpret} $\rightarrow$ \code{plan} $\rightarrow$ \code{fetch} $\rightarrow$
+\code{reason} $\rightarrow$ \code{respond}, sete tools, 71 quadros NDJSON no stream.
+
+Em \code{interpret}, \code{graph\_query} resolve ``a Ômega 3'' contra o supercérebro e fixa
+a janela de datas. \code{plan} não chama tool: ordena os passos. \code{fetch} puxa
+\code{meta\_ads\_insights}, \code{crm\_leads}, \code{ga\_report}, \code{list\_criativos} e
+\code{timeline\_query} --- e é aqui que aparece o passo que ninguém programou, porque olhar
+o link de destino do criativo só faz sentido depois de ver que o Meta reporta mais conversão
+do que o CRM atribui. \code{reason} chama \code{app\_diagnostico}, o App de metodologia, que
+devolve estrutura: veredito, causas com evidência, hipóteses descartadas. \code{respond}
+redige.
+
+O veredito é uma frase: ``As vendas não caíram na proporção que o relatório mostra: a
+atribuição quebrou.'' A evidência que a sustenta vem numerada e com fonte: ``Meta reporta 51
+conversões de Ômega 3 na semana atual contra 51 em S2; leads atribuídos caíram de 54 para
+26, e os leads sem origem subiram de 2 para 30. Receita ganha do produto: R\$ 4.980,33 (S2)
+$\rightarrow$ R\$ 5.497,18 (S4).'' O Analytics corrobora pelo lado do canal: ``paid\_social
+2939 $\rightarrow$ 2054 sessões; direct 646 $\rightarrow$ 1430'' --- tráfego que existia
+deixou de se identificar. Uma causa secundária real, e menor, também sai nomeada: o
+carrossel saturou, frequência 5,56, CTR de 1,91\% para 0,72\%. Cada afirmação da resposta
+carrega evidência e arquivo-fonte citado, e a lista de hipóteses testadas e descartadas vem
+junto --- é a diferença entre um parágrafo correto e um parágrafo defensável na call.
+
+\subsection{O gate é real, e é idempotente}
+
+A Seção~3.4 argumenta que \code{gate} e \code{act} precisam ser nós separados porque a
+retomada roda o nó de novo desde o início. Isso deixou de ser teoria. Na rota real, com o
+turno T1 parado em \code{awaiting\_confirmation}, três coisas acontecem:
+
+\begin{itemize}\itemsep2pt
+\item \textbf{Aprovar} executa a ação \textbf{uma vez}: o grafo entra em \code{act}, emite um
+único evento \code{action\_executed} e segue por \code{acao\_confirmada} para \code{respond}.
+\item \textbf{Reenviar a mesma aprovação} executa \textbf{zero} vezes. A resposta é ``Não
+encontrei um turno aguardando confirmação nesta sessão.'' A pendência já foi consumida.
+\item \textbf{Negar} vai direto para \code{respond}, com zero ações executadas e a pendência
+zerada.
+\end{itemize}
+
+É o elo mais forte entre a tese e o artefato: a regra não-negociável da Seção~3.4 é
+verificável clicando duas vezes em confirmar e contando os efeitos.
+
+\subsection{O agente não cai na armadilha do próprio dataset}
+
+O conjunto de dados esconde um caso desenhado para punir quem olha uma fonte só. O anúncio
+\code{omega3\_vid\_prova\_social\_v2} tem CPA péssimo no CRM --- e tem porque o rastreio dele
+quebrou, não porque parou de vender. Quem lê apenas o CRM desliga o anúncio que está
+vendendo.
+
+Em T1, os três anúncios propostos para pausa \textbf{não incluem} esse. Ele aparece na lista
+marcado como ``não pausar'', com o motivo. Em T2, ``pausar o prova social por CPA ruim no
+CRM'' consta explicitamente entre as hipóteses \emph{descartadas}. É a melhor evidência
+disponível de que cruzar fontes muda a decisão, e não apenas enfeita a resposta.
+
+\subsection{Aritmética em código, e o rodapé que declara o que falta}
+
+Todo join Meta $\times$ CRM por \code{utm\_content}, todo agrupamento e todo CPA são
+calculados em TypeScript e devolvidos prontos ao modelo, junto com a contagem explícita do
+que ficou de fora. O modelo redige sobre um número que ele não somou.
+
+A parte que importa é o resto da frase. O rodapé da tabela de T4 diz, literalmente: ``37
+lead(s) do CRM chegaram sem \code{utm\_content} e NÃO entram nesta tabela (R\$ 3.616,93 de
+receita ganha). R\$ 900,00 de gasto do Meta e 30 conversões também ficam de fora, do(s)
+anúncio(s) \code{omega3\_vid\_prova\_social\_v2} --- a URL parou de carregar UTM. CPL = gasto
+$\div$ leads atribuídos: para um anúncio com rastreio quebrado ele fica artificialmente
+alto.'' A tabela declara o que a tabela não mostra, e explica por que a métrica dela mente
+naquela linha.
+
+Isso mitiga a falha nomeada na Seção~6.1 --- mas mitiga, não elimina, e a distinção é o
+ponto. A contagem do que ficou de fora é calculada em código; \emph{exibi-la} depende de o
+nó \code{respond} preencher o campo de rodapé. Uma garantia estrutural seria o artefato
+recusar-se a existir sem ela. Não é o caso. É uma prática, não uma trava.
+
+\paragraph{O que ficou no desenho.} A compactação existe como nó, mas não há checkpoint
+persistente entre sessões: o estado vive no turno. Retry com backoff exponencial, avaliação
+quantitativa (item 1 da Seção~7) e qualquer integração real ficaram de fora --- as sete
+fontes de dados são arquivos locais, e é disso que trata a seção seguinte.
+
+% ---------------------------------------------------------------------------
 \section{Notas de execução}
 
-\textit{[Seção preenchida na revisão final: endereço da demo, chave de API, modelos e o
-que exatamente é simulado.]}
+\subsection{Chave e modelo}
+
+A chave do OpenRouter é colada num campo visível na coluna do chat. Ela fica no
+\code{sessionStorage} do browser e viaja apenas no header \code{x-openrouter-key} da chamada
+para \code{/api/chat}. Não é lida de variável de ambiente, não é persistida no servidor e
+não é gravada em log --- verificado com uma chave-canário, que não reaparece nem no stream
+nem no log do servidor. Ao lado do campo, um seletor de modelo oferece
+\code{anthropic/claude-sonnet-4.5}, \code{openai/gpt-4.1} e \code{google/gemini-2.5-pro},
+mais um campo livre para qualquer outro \emph{slug} do OpenRouter.
+
+\subsection{Sem chave: replay determinístico}
+
+Sem chave colada, a demo entra em modo \emph{replay}: um roteiro gravado dos quatro
+percursos, sem nenhuma chamada de LLM. A interface rotula esse modo de forma permanente e
+inequívoca, e o rótulo existe por um motivo de honestidade, não de estética --- uma demo que
+finge pensar é pior que uma demo que não pensa. O replay serve para ver a topologia, o
+trace e o gate; não serve para julgar o modelo.
+
+\subsection{Os dados}
+
+São 544\,KB de JSON em sete arquivos: o supercérebro com 39 nós e 76 arestas, a linha do
+tempo com 18 eventos, o Meta com 304 linhas diárias, 397 leads de CRM, 13 criativos, mais
+Google Analytics e Google Ads. \textbf{Tudo é fictício.} Nenhum dado de conta real da SPOT
+ou da Housewhey foi usado; os nomes vêm do enunciado do desafio, os números foram gerados.
+
+O gerador é determinístico, com \emph{seed} fixa, e vem com um validador de oito checagens
+aritméticas: o gasto por anúncio soma o gasto da campanha; todo \code{utm\_content} que
+aparece no CRM existe na mídia; leads batem com conversões; o buraco de atribuição da semana
+atual supera o da semana anterior; a integridade referencial do grafo fecha. Sem isso, o
+caso plantado da Seção~4.4 poderia ser um artefato de geração em vez de um teste.
+
+Registro uma limitação de contrato: o \code{dataset\_prompt.md} oficial não estava mais
+acessível na página do desafio na data de execução, então o esquema seguido foi derivado do
+próprio enunciado.
+
+\subsection{O que dá para testar}
+
+Onze checagens executáveis, todas passando, cobrem exatamente as afirmações que este paper
+faz sobre o harness: escrita fora do nó \code{act} é recusada por política; os tetos de
+passo e de ciclo do ReAct valem; o gate é idempotente; a contagem do que fica fora do join
+confere; a chave não vaza; e o roteamento observado é idêntico ao da
+Figura~\ref{fig:grafo}. Um teste que apenas confirmasse que o sistema responde não provaria
+nada --- estes confirmam as fronteiras.
+
+\subsection{O limite honesto}
+
+O caminho com LLM real é exercitado por teste com a chamada de rede \emph{stubada} e pela
+rota em produção, mas \textbf{não foi executado ponta a ponta com uma chave paga} --- quem
+cola a chave é o avaliador. Portanto este paper não afirma nada sobre a qualidade das
+respostas com um modelo real: o que está demonstrado é o comportamento do harness --- a
+topologia, os tetos, a allowlist, o gate e a aritmética ---, que é justamente a camada que a
+Seção~1 separou do modelo.
 
 % ---------------------------------------------------------------------------
 \section{Onde a solução quebra}
@@ -630,15 +798,19 @@ arte.
 
 \subsection{Relatório --- a soma silenciosa}
 
-Sem CodeAct, o cruzamento de gasto do Meta com leads do CRM por \code{utm\_content} é feito
-pelo modelo lendo linhas. Com poucos criativos funciona. Com uma conta real de centenas de
-anúncios, o modelo erra soma e agrupamento --- e erra \emph{em silêncio}, porque o número
-errado é plausível. O agravante é específico deste caso: parte dos leads chega sem
-\code{utm\_content} e simplesmente não aparece na tabela. A única coisa que impede o
-artefato de mentir com cara de rigor é uma nota de rodapé do tipo ``12 leads chegaram sem
-\code{utm\_content} e não entram nesta tabela''. Ou seja: a correção da peça mais importante
-do relatório depende de o nó \code{respond} lembrar de preencher um campo opcional. Isso não
-é uma garantia; é uma esperança.
+O cruzamento de gasto do Meta com leads do CRM por \code{utm\_content} é feito em código
+dentro da tool, e essa é a defesa contra o modo de falha clássico: LLM lendo centenas de
+linhas erra soma e agrupamento \emph{em silêncio}, porque o número errado é plausível. A
+falha que sobra é outra, e é mais sutil.
+
+Parte dos leads chega sem \code{utm\_content} e simplesmente não aparece na tabela. A
+contagem desses órfãos é calculada corretamente --- mas o que impede o artefato de mentir
+com cara de rigor é \emph{exibi-la}, e exibi-la depende de o nó \code{respond} preencher um
+campo de rodapé. Nada no tipo do artefato o obriga: uma tabela sem rodapé é um artefato
+válido. Ou seja, a correção da peça mais importante do relatório continua sendo uma prática,
+não uma trava. E permanece o buraco de cobertura: agregação que não tem tool --- ``refaz com
+média móvel de sete dias'' --- volta para o colo do modelo, com o mesmo erro silencioso de
+sempre.
 
 \subsection{Diagnóstico --- o agente não sabe o que não pode ver}
 
@@ -686,12 +858,14 @@ de passos são números que eu estimei olhando quatro prompts --- sem medição,
 chute e toda regressão passa despercebida. É a primeira coisa porque as outras duas ficam
 impossíveis de validar sem ela.
 
-\paragraph{Agregação determinística dentro das tools.} Mover o join por \code{utm\_content},
-o agrupamento e o cálculo de custo por lead para dentro de uma tool que faz aritmética em
-código, devolvendo ao modelo o resultado agregado com a contagem explícita do que ficou de
-fora. Isso mata a falha da Seção~6.1 sem abrir sandbox: o código é meu, não gerado. O custo
-é rigidez --- cada agregação nova é uma tool nova --- e eu aceito, porque errar soma em
-silêncio é pior que não conseguir agregar de um jeito específico.
+\paragraph{Estender a agregação determinística --- e travar o rodapé.} O mecanismo já
+existe: o join por \code{utm\_content}, o agrupamento e o custo por lead são aritmética em
+código dentro da tool, com a contagem do que ficou de fora (Seção~4.5). O que falta é
+cobertura e obrigação. Cobertura: cada recorte novo que o gestor pedir ainda é uma tool
+nova, e essa rigidez é o preço aceito por recusar o sandbox --- o código é meu, não gerado.
+Obrigação: fazer o tipo do artefato exigir a declaração de exclusões, para que uma tabela
+sem rodapé não seja sequer construível. Hoje o rodapé é prática; a Seção~6.1 explica por que
+isso não basta.
 
 \paragraph{Aprendizado de alias.} Quando o \code{interpret} pergunta e o gestor corrige
 (``é a Ômega 3 Prospecção''), gravar esse alias no supercérebro. Ataca a falha 6.4(b) no
