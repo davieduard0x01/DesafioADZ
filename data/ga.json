@@ -9,9 +9,6 @@
     "inicio": "2026-07-27",
     "fim": "2026-08-23"
   },
-  "notas": {
-    "anomalia": "A partir de 2026-08-11 o canal direct/(none) sobe e paid_social cai no mesmo volume: são as sessões do anúncio omega3_vid_prova_social_v2, cujo link virou encurtador e perdeu as UTMs."
-  },
   "sessoes_por_canal_dia": [
     {
       "date": "2026-07-27",
