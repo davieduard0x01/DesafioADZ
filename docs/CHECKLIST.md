@@ -29,6 +29,8 @@ Método: nada é marcado por leitura de código. Cada item foi executado.
 
 ## Demo pública (peso 25%)
 
+- [x] Interface seguindo o **blueprint oficial da AdzHub** (tema claro, acento índigo, legenda do fluxo no rodapé) — referência em `docs/adzhub/referencia/`
+
 - [x] **https://desafio-adz-harness.vercel.app** — HTTP 200 **sem login e sem cookie**
 - [x] URL estável (alias de produção, não URL de deploy)
 - [x] Campo de `OPENROUTER_API_KEY` visível na coluna do chat
@@ -69,7 +71,7 @@ Método: nada é marcado por leitura de código. Cada item foi executado.
   - Repo GitHub: **deixar em branco** (o repositório é privado por decisão do candidato; o campo é opcional)
   - Notas: ver `docs/NOTAS-FORMULARIO.md`
   - Aceite LGPD
-- [ ] Clicar na demo uma vez antes de enviar (o fluxo de clique — expandir trace, aprovar/negar no diálogo — foi verificado por código e pela rota HTTP, mas não por um humano com mouse)
+- [x] Fluxo de clique validado no browser em produção: gate abre, confirmar só habilita após o checkbox, aprovar executa uma vez, negar não executa, resposta e artefatos renderizam
 
 ## Limites declarados (estão no paper, §5.5)
 
