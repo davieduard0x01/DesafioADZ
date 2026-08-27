@@ -340,8 +340,7 @@ for (let i = 0; i < DIAS; i++) {
 w("ga.json", {
   _aviso: "DADOS FICTÍCIOS gerados para o desafio AdzHub.",
   propriedade: { property_id: "properties/419883210", nome: "Housewhey — GA4", fuso: "America/Sao_Paulo" },
-  periodo: { inicio: INICIO, fim: FIM }, cujo link virou encurtador e perdeu as UTMs.`,
-  },
+  periodo: { inicio: INICIO, fim: FIM },
   sessoes_por_canal_dia: gaCanais,
   sessoes_por_landing_page_dia: gaLps,
 });

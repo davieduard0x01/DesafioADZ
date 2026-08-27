@@ -2,7 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
-\usepackage{lmodern,booktabs,graphicx,microtype,geometry}
+\usepackage{lmodern,booktabs,graphicx,microtype,geometry,array}
 \usepackage[hidelinks]{hyperref}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,fit,backgrounds,shapes.geometric}
@@ -20,43 +20,41 @@
 
 \title{\textbf{Lastro}: um harness de grafo com ReAct nos nós e permissão
 \emph{deny-first} para gestão de marketing}
-\author{Davi Eduardo}
+\author{Davi Eduardo\\[2pt]
+{\normalsize Candidato $\cdot$ Desafio Harness Agêntico $\cdot$ AdzHub Núcleo Fundacional}}
 \date{Agosto de 2026}
 
 \begin{document}
+\renewcommand{\abstractname}{Abstract}
 \maketitle
 
 \begin{abstract}
 \noindent
-O gestor de conta de uma agência não faz pedidos de um passo. ``Por que caíram as
-vendas da Ômega 3 essa semana?'' exige resolver uma entidade na memória da conta,
-consultar duas ou três APIs, cruzar identificadores, formular e descartar hipóteses ---
-e, no fim, defender o número numa reunião com o cliente. Este paper propõe
-\textbf{Lastro}, um harness híbrido para o chat agêntico da AdzHub:
-\textbf{grafo de estados como espinha dorsal}, \textbf{loops ReAct dentro dos nós de
-investigação} e uma \textbf{camada de permissões deny-first}, com o supercérebro da conta
---- grafo de entidades mais linha do tempo --- tratado como fonte de contexto de primeira
-classe, acessada por tools dedicadas em vez de despejada no prompt. O argumento central do
-estudo é de enquadramento: os cinco tipos de harness de referência do desafio não estão no
-mesmo nível de abstração. ReAct é um loop; grafo é uma topologia; sandbox é um ambiente de
-execução; permissões e skills são uma camada transversal; RLM é uma estratégia de acesso a
-contexto. Só os dois primeiros disputam o mesmo lugar, e a pergunta certa não é ``qual
-escolher'', é ``o que fica por fora, o que fica por dentro e o que atravessa tudo''. A
-aposta de produto que sustenta o desenho: em marketing, a \emph{defensibilidade} da
-resposta vale mais que a autonomia do agente. Dois recortes são declarados com o custo de
-cada um: sem sandbox/CodeAct e sem RLM completo --- apenas compactação por nó. O paper
-nomeia onde a arquitetura quebra nas quatro tarefas reais do gestor, em vez de alegar
-cobertura. O desenho não ficou no papel: o harness roda numa demo pública, onde os quatro
-percursos do gestor executam ponta a ponta e o gate se comporta como a arquitetura exige ---
-aprovar executa a ação uma vez, reenviar a mesma aprovação executa zero.
+O gestor de conta não faz pedidos de um passo: ``por que caíram as vendas da Ômega 3 essa
+semana?'' exige resolver uma entidade na memória da conta, consultar três APIs, cruzar
+identificadores, descartar hipóteses e, no fim, defender o número na reunião com o cliente.
+Proponho \textbf{Lastro}, um harness híbrido para o chat agêntico da AdzHub: \textbf{grafo
+de estados por fora}, \textbf{loops ReAct dentro dos nós de investigação} e
+\textbf{permissões \emph{deny-first} atravessando tudo}, com o supercérebro --- grafo de
+entidades mais linha do tempo --- acessado por tool em vez de despejado no prompt. O
+enquadramento é o argumento central: os cinco tipos de harness de referência não estão no
+mesmo nível de abstração --- loop, topologia, ambiente de execução, camada transversal e
+estratégia de acesso a contexto ---, então a pergunta não é ``qual escolher'', e sim o que
+fica por fora, o que fica por dentro e o que atravessa. A aposta de produto: em marketing, a
+\emph{defensibilidade} da resposta vale mais que a autonomia do agente. Dois recortes são
+declarados com seu custo: sem sandbox/CodeAct e sem RLM completo. O protótipo roda os quatro
+percursos do gestor e mostra o gate interrompendo o turno de verdade --- aprovar executa a
+ação uma vez, reenviar a mesma aprovação executa zero ---, mas nenhum efeito sai dele: as
+sete fontes de dados são arquivos locais. O paper nomeia onde a arquitetura quebra nas
+quatro tarefas reais do gestor, em vez de alegar cobertura.
 \end{abstract}
 
 \smallskip
-\noindent\textbf{Palavras-chave:} harness agêntico; grafo de estados; ReAct;
+\noindent\textbf{Keywords:} harness agêntico; grafo de estados; ReAct;
 permissões deny-first; memória temporal; gestão de marketing.
 
 % ---------------------------------------------------------------------------
-\section{Introdução}
+\section{Introduction}
 
 O produto-alvo da AdzHub é um chat agêntico para o profissional de marketing: o gestor
 descreve uma tarefa em linguagem natural e o sistema orquestra contexto e ferramentas até
@@ -96,14 +94,16 @@ planejou, sob teto de passos e allowlist própria. O gate garante que nenhuma a�
 efeito real acontece sem um humano ver o preview do efeito. O nome do harness resume a
 aposta: nenhuma afirmação circula sem o lastro que a segura.
 
-\paragraph{Mapa.} A Seção~2 fixa o vocabulário e lê o domínio. A Seção~3 é o coração
-argumentativo: por que grafo mais ReAct mais permissão, por que não cada uma das outras
-referências isoladamente, o que é tool, o que é memória, o que é App, o que mudou no meu
-entendimento durante o estudo e quais trade-offs foram aceitos de propósito. A Seção~4
-descreve o harness que foi construído e está no ar, com um turno percorrido nó por nó, e a
-Seção~5 diz como executá-lo --- chave, modelo, dados e o que os testes cobrem. A Seção~6 nomeia onde a
-arquitetura quebra nas quatro tarefas reais do gestor, e a Seção~7 diz o que eu construiria
-em seguida --- e o que deliberadamente não construiria.
+\paragraph{Mapa.} A Seção~2 (\emph{Preliminaries}) fixa o vocabulário e lê o domínio. A
+Seção~3 (\emph{Design}) é o coração argumentativo: por que grafo mais ReAct mais permissão,
+por que não cada uma das outras referências isoladamente, o que é tool, o que é memória, o
+que é App, o que mudou no meu entendimento durante o estudo e quais trade-offs foram aceitos
+de propósito. A Seção~4 (\emph{System}) descreve o harness que foi construído e está no ar,
+com um turno percorrido nó por nó, e diz peça por peça o que é tese, o que é simulado e o
+que está visível na interface (Tabela~\ref{tab:pecas}). A Seção~5 (\emph{Execution notes})
+diz como executá-lo --- chave, modelo, dados e o que os testes cobrem. A Seção~6
+(\emph{Limitations}) nomeia onde a arquitetura quebra nas quatro tarefas reais do gestor, o
+que eu construiria em seguida e o que deliberadamente não construiria.
 
 % ---------------------------------------------------------------------------
 \begin{figure*}[t]
@@ -157,7 +157,7 @@ qualquer escrita.}
 \label{fig:sistema}
 \end{figure*}
 
-\section{Preliminares}
+\section{Preliminaries}
 
 \subsection{Harness, no vocabulário deste paper}
 
@@ -202,35 +202,48 @@ verba de um cliente. Um harness sintonizado para uma delas está desafinado para
 três --- e é daí que o híbrido nasce, não de indecisão.
 
 % ---------------------------------------------------------------------------
-\begin{table}[t]
+\begin{table*}[t]
 \centering
-\footnotesize
-\caption{Catálogo de tools desenhado para o domínio: 10 de leitura, 2 de escrita, toda
-escrita atravessando o \code{gate}. A tabela é \textbf{ilustrativa} do contrato de
-fronteira --- não é uma allowlist de produção, que seria por conta, por perfil de usuário e
-versionada.}
-\label{tab:tools}
-\begin{tabular}{@{}llll@{}}
+\scriptsize
+\caption{Cada peça do harness, o papel que cumpre na tese e o seu \emph{status de verdade}:
+\textbf{só tese} (argumentada aqui, não existe em código), \textbf{simulado} (roda, mas
+contra os sete JSON locais de \code{data/}) ou \textbf{visível na UI} (o avaliador enxerga
+acontecer no trace ou no Palco). Nenhuma escrita atravessa a fronteira do protótipo. A
+tabela é \textbf{ilustrativa} do contrato de fronteira --- não é allowlist de produção, que
+seria por conta, por perfil e versionada.}
+\label{tab:pecas}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{32mm}>{\raggedright\arraybackslash}p{70mm}>{\raggedright\arraybackslash}p{61mm}@{}}
 \toprule
-Tool & Camada & Efeito & Nó \\
+\textbf{Peça} & \textbf{Papel na tese} & \textbf{No paper / no chat / mock} \\
 \midrule
-\code{graph\_query}        & supercérebro & read  & int., fet., rea. \\
-\code{timeline\_query}     & supercérebro & read  & int., fet., rea. \\
-\code{meta\_ads\_insights} & API          & read  & fetch \\
-\code{google\_ads\_insights}& API         & read  & fetch \\
-\code{ga\_report}          & API          & read  & fetch \\
-\code{crm\_leads}          & API          & read  & fetch \\
-\code{list\_criativos}     & API          & read  & fetch \\
-\code{get\_metrics}        & API          & read  & fetch \\
-\code{app\_diagnostico}    & App          & read  & reason \\
-\code{propose\_ctas}       & App          & read  & reason \\
-\code{pause\_ads}          & API          & \textbf{write} & act (pós-gate) \\
-\code{send\_whatsapp}      & API          & \textbf{write} & act (pós-gate) \\
+\code{graph\_query}          & memória: navega o grafo do supercérebro; resolve entidade em \code{interpret}, \code{fetch}, \code{reason} & simulado (\code{supercerebro.json}) $\cdot$ visível na UI \\
+\code{timeline\_query}       & memória: eventos datados por entidade e janela & simulado (\code{timeline.json}) $\cdot$ visível na UI \\
+\code{meta\_ads\_insights}   & dado bruto de mídia por anúncio; nó \code{fetch} & simulado (\code{meta\_ads.json}) $\cdot$ visível na UI \\
+\code{google\_ads\_insights} & dado bruto do segundo canal; nó \code{fetch} & simulado (\code{google\_ads.json}) $\cdot$ visível na UI \\
+\code{ga\_report}            & sessões por canal e landing; corrobora a quebra de atribuição & simulado (\code{ga.json}) $\cdot$ visível na UI \\
+\code{crm\_leads}            & resultado real; é o outro lado do join por \code{utm\_content} & simulado (\code{crm.json}) $\cdot$ visível na UI \\
+\code{list\_criativos}       & App: ranking e recomendação por criativo & simulado (\code{criativos.json}) $\cdot$ visível na UI \\
+\code{get\_metrics}          & join Meta $\times$ CRM feito em código, com contagem do que ficou de fora & simulado (dois JSON) $\cdot$ visível na UI \\
+\code{app\_diagnostico}      & App: metodologia que devolve estrutura --- veredito, causas com evidência, hipóteses descartadas & simulado $\cdot$ visível na UI \\
+\code{propose\_ctas}         & App: gera copy; é \emph{leitura}, porque gerar não é publicar & simulado $\cdot$ visível na UI \\
+\code{pause\_ads}            & escrita; só existe no nó \code{act}, depois do gate & simulado $\cdot$ visível na UI $\cdot$ \textbf{o efeito não sai do protótipo} \\
+\code{send\_whatsapp}        & escrita; só existe no nó \code{act}, depois do gate & simulado $\cdot$ visível na UI $\cdot$ \textbf{o efeito não sai do protótipo} \\
+\midrule
+nó \code{gate} (não é tool)  & permissão como \emph{fase do fluxo}: interrompe o turno e devolve o preview antes de qualquer escrita & visível na UI --- o turno fecha em \code{awaiting\_confirmation} e a retomada é idempotente \\
+supercérebro (grafo + linha do tempo) & memória de primeira classe, acessada por tool e nunca colada no prompt & simulado (39 nós, 76 arestas, 18 eventos) $\cdot$ visível na UI pelo trace \\
+Palco (artefatos)            & preview e evidência antes da decisão, não depois dela & visível na UI (tabela, lista de criativos, \emph{diff} de CTA, pauta) \\
+\midrule
+\code{app\_mapa\_solucao} e \code{search\_conversations} & ficha de marca e memória de canal previstas no contrato oficial & \textbf{só tese} --- não existem como arquivo próprio (Seção~5.3) \\
+checkpoint persistente entre sessões & retomar um turno depois de reiniciar o servidor & \textbf{só tese} --- o estado vive no turno \\
+retry com backoff exponencial & resiliência de tool sob falha transitória & \textbf{só tese} \\
+integração com API real (Meta, CRM, WhatsApp) & o efeito chegar na conta do cliente & \textbf{só tese} \\
+sandbox/CodeAct e RLM completo & recortes recusados por escrito, com o custo nomeado & \textbf{só tese} (Seções~3.1 e~6.6) \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
-\section{Projeto}
+\section{Design}
 
 \subsection{Cinco referências, três níveis de abstração}
 
@@ -531,7 +544,7 @@ modelo, e é a diferença entre um adaptador opinativo e uma API crua --- a tool
 \code{meta\_ads.gasto\_por\_criativo(conta, periodo)}, cuja definição de ``gasto'' é da
 agência e não do modelo~\cite{vo2026harness}.
 
-\textbf{Tool}, por fim, é o contrato. A Tabela~\ref{tab:tools} lista o catálogo desenhado:
+\textbf{Tool}, por fim, é o contrato. A Tabela~\ref{tab:pecas} lista o catálogo desenhado:
 dez leituras e duas escritas, cada uma amarrada aos nós de onde pode ser chamada. Duas
 travas independentes protegem a allowlist --- o orçamento do nó e o campo de nós permitidos
 da própria tool --- de modo que um erro de configuração de nó não abra acesso à pausa de
@@ -590,7 +603,7 @@ fricção e aumenta a aprovação cega. O trade-off não desaparece, só muda de
 \textbf{Cauda longa por superfície pequena.} Sem CodeAct, ``refaz com média móvel de sete
 dias'' não tem tool e não tem como ser improvisado. Toda capacidade nova é um ciclo de
 desenvolvimento, não uma frase do gestor. Em troca, a resposta a ``o que esse agente
-consegue fazer?'' cabe na Tabela~\ref{tab:tools}.
+consegue fazer?'' cabe na Tabela~\ref{tab:pecas}.
 
 \textbf{Sessão longa por simplicidade.} A compactação é por nó, não por sessão: o contexto
 do chat cresce sem teto. É problema conhecido e não resolvido. Pior, \code{compact} é lossy
@@ -607,7 +620,7 @@ Seção~6.1.
 Ele não é: a decisão de qual edge tomar continua sendo do modelo na maioria dos casos.
 
 % ---------------------------------------------------------------------------
-\section{Sistema}
+\section{System}
 
 A arquitetura das seções anteriores foi implementada e está no ar. A demo é pública em
 \url{https://desafio-adz-harness.vercel.app}: responde HTTP 200 sem login e sem cookie,
@@ -622,7 +635,7 @@ descreve em prosa. \code{interpret} roda no máximo três passos, sob allowlist 
 duas tools --- \code{graph\_query} e \code{timeline\_query} ---, porque resolver entidade
 não precisa de API de anúncio. \code{fetch} tem teto de seis passos, \code{reason} de
 quatro, e o ciclo \code{fetch} $\leftrightarrow$ \code{reason} fecha em três idas e voltas.
-\code{act} tem teto de dois. O catálogo é o da Tabela~\ref{tab:tools}: doze tools, dez de
+\code{act} tem teto de dois. O catálogo é o da Tabela~\ref{tab:pecas}: doze tools, dez de
 leitura e duas de escrita, cada uma declarando o efeito e os nós de onde pode ser chamada.
 
 A Tabela~\ref{tab:percursos} mostra os quatro pedidos típicos do gestor medidos nessa rota.
@@ -731,11 +744,11 @@ recusar-se a existir sem ela. Não é o caso. É uma prática, não uma trava.
 
 \paragraph{O que ficou no desenho.} A compactação existe como nó, mas não há checkpoint
 persistente entre sessões: o estado vive no turno. Retry com backoff exponencial, avaliação
-quantitativa (item 1 da Seção~7) e qualquer integração real ficaram de fora --- as sete
+quantitativa (item 1 da Seção~6.5) e qualquer integração real ficaram de fora --- as sete
 fontes de dados são arquivos locais, e é disso que trata a seção seguinte.
 
 % ---------------------------------------------------------------------------
-\section{Notas de execução}
+\section{Execution notes}
 
 \subsection{Chave e modelo}
 
@@ -768,9 +781,40 @@ aparece no CRM existe na mídia; leads batem com conversões; o buraco de atribu
 atual supera o da semana anterior; a integridade referencial do grafo fecha. Sem isso, o
 caso plantado da Seção~4.4 poderia ser um artefato de geração em vez de um teste.
 
-Registro uma limitação de contrato: o \code{dataset\_prompt.md} oficial não estava mais
-acessível na página do desafio na data de execução, então o esquema seguido foi derivado do
-próprio enunciado.
+\paragraph{O contrato oficial, conferido depois.} O dataset foi gerado antes de eu ter o
+\code{dataset\_prompt.md} em mãos --- o esquema saiu do próprio enunciado --- e só depois foi
+conferido contra o contrato oficial. Registro as divergências em vez de as apagar, porque
+elas dizem o que um avaliador vai procurar e não vai achar com o nome que espera.
+
+{\raggedright
+\textbf{Nomenclatura.} Os arquivos aqui são \code{supercerebro.json},
+\code{timeline.json}, \code{meta\_ads.json}, \code{crm.json}, \code{criativos.json},
+\code{ga.json} e \code{google\_ads.json}; o contrato sugere
+\code{supercerebro\_graph.json}, \code{supercerebro\_timeline.json},
+\code{api\_meta\_ads.json}, \code{api\_crm\_leads.json},
+\code{app\_analise\_criativos.json}, \code{app\_mapa\_solucao.json} e
+\code{conversas.json}. Os nomes de tool divergem na mesma medida ---
+\code{graph\_query} onde o contrato diz \code{search\_client\_context},
+\code{timeline\_query} por \code{get\_timeline}, \code{crm\_leads} por \code{get\_leads},
+e assim por diante. Nenhuma dessas diferenças é semântica: a malha que o contrato exige ---
+\code{ad\_id} do Meta igual a \code{utm\_content} do CRM, pessoas do grafo aparecendo na
+linha do tempo, criativos do App batendo com os anúncios --- está fechada e é o que os
+testes verificam.\par}
+
+\textbf{Duas lacunas reais.} O contrato pede um \code{app\_mapa\_solucao} --- a ficha de
+marca: oferta, promessa, prova, objeções, tom de voz --- e um \code{conversas.json}
+separado, para reunião e WhatsApp. \textbf{Nós não temos os dois como arquivos próprios.} O
+conteúdo de conversas vive dentro de \code{timeline.json}, o que basta para a pauta de T3 e
+não basta para uma busca textual sobre o que foi dito; a ficha de marca simplesmente não
+existe, e é ela que deveria ancorar o tom das variações de CTA em T4. As duas aparecem como
+\emph{só tese} na Tabela~\ref{tab:pecas}.
+
+\textbf{Uma regra do contrato que foi cumprida.} A regra 2 --- ``não escreva a resposta no
+campo \code{notes}, deixe o harness descobrir'' --- estava violada: havia em \code{ga.json}
+uma nota que descrevia a causa-raiz da quebra de atribuição em uma frase. Ela foi removida.
+Nenhuma tool devolvia esse campo ao modelo, o que foi verificado no stream, então a
+descoberta da Seção~4.2 nunca dependeu dela --- mas um dado que carrega o gabarito não tem
+por que existir.
 
 \subsection{O que dá para testar}
 
@@ -791,10 +835,12 @@ topologia, os tetos, a allowlist, o gate e a aritmética ---, que é justamente 
 Seção~1 separou do modelo.
 
 % ---------------------------------------------------------------------------
-\section{Onde a solução quebra}
+\section{Limitations}
 
-Uma falha por tarefa típica do gestor. São falhas do harness que eu propus, não do estado da
-arte.
+As quatro primeiras subseções nomeiam uma falha por tarefa típica do gestor --- relatório,
+diagnóstico, pauta, criativos. São falhas do harness que eu propus, não do estado da arte, e
+nenhuma delas tem correção prevista aqui. As duas últimas dizem o que eu faria com mais uma
+semana e o que eu deliberadamente deixaria de fazer.
 
 \subsection{Relatório --- a soma silenciosa}
 
@@ -847,8 +893,7 @@ resolução de entidade quebra com apelido interno. O time chama a campanha de `
 está falando e o agente parece obtuso. A correção real não é técnica: é curadoria contínua
 de aliases no supercérebro, trabalho que o harness não faz sozinho.
 
-% ---------------------------------------------------------------------------
-\section{O que eu construiria em seguida}
+\subsection{Se eu tivesse mais uma semana}
 
 \paragraph{Avaliação antes de qualquer feature nova.} Um conjunto de 20 a 30 prompts com
 resultado esperado e um runner determinístico medindo quatro coisas: a entidade foi
@@ -872,7 +917,7 @@ isso não basta.
 ponto certo: o problema é de curadoria, e a correção mais barata é aproveitar a correção que
 o humano já está fazendo de graça.
 
-\subsection*{E o que eu deliberadamente não construiria}
+\subsection{E o que eu deliberadamente não construiria}
 
 \textbf{Sandbox/CodeAct.} É a tentação óbvia depois do item anterior, e por isso precisa
 estar escrita aqui. Código gerado com acesso a credenciais de conta de anúncios de cliente
@@ -897,8 +942,7 @@ seguras. É exatamente o mecanismo que transforma o gate em teatro por decisão 
 vez de por fadiga do usuário. Se um dia existir, vem depois da telemetria que mostre quais
 confirmações são realmente ruído --- não antes.
 
-% ---------------------------------------------------------------------------
-\section{Conclusão}
+\subsection*{Fechamento}
 
 O trabalho de arquitetura de harness, neste domínio, não é escolher entre cinco opções: é
 decidir o que fica por fora, o que fica por dentro e o que atravessa tudo. Lastro responde
@@ -908,7 +952,9 @@ sobre a tecnologia: o gestor de marketing não precisa de um agente que decida s
 precisa de um agente cujas conclusões ele consiga defender na frente do cliente, e cujas
 ações ele consiga autorizar sabendo o que está autorizando.
 
+\renewcommand{\refname}{References}
+{\small
 \bibliographystyle{plain}
-\bibliography{refs}
+\bibliography{refs}}
 
 \end{document}
