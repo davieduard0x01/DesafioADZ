@@ -834,6 +834,19 @@ respostas com um modelo real: o que está demonstrado é o comportamento do harn
 topologia, os tetos, a allowlist, o gate e a aritmética ---, que é justamente a camada que a
 Seção~1 separou do modelo.
 
+Há um segundo limite, e ele é do \emph{deploy}, não do desenho. O checkpoint que sustenta a
+retomada do gate vive na memória do processo. A demo roda em ambiente \emph{serverless}, onde
+a requisição que traz a decisão do gestor raramente cai na mesma instância que montou a
+proposta --- e a retomada não encontrava o turno. No caminho de replay isso foi resolvido sem
+persistência: como o turno é determinístico, o servidor o reexecuta em silêncio para
+reconstruir o checkpoint e então retoma. \textbf{O caminho com chave não tem essa saída},
+porque reexecutar chamaria o modelo de novo: ali a retomada depende de a decisão cair na
+instância certa, e quando não cai o turno responde que não encontrou proposta pendente, em vez
+de agir por conta. A correção de produção é mover o checkpoint para um \emph{store} externo,
+compartilhado entre instâncias. O que interessa para a tese é que a falha é de infraestrutura,
+não de desenho, e que o modo degradado é seguro: quando o checkpoint some, o turno recusa e
+pede o pedido de novo --- nenhuma ação é executada por engano.
+
 % ---------------------------------------------------------------------------
 \section{Limitations}
 
