@@ -1,0 +1,211 @@
+{
+  "_aviso": "DADOS FICTÍCIOS gerados para o desafio AdzHub. Conversas parafraseadas, não transcritas.",
+  "conta": "Housewhey",
+  "periodo": {
+    "inicio": "2026-06-15",
+    "fim": "2026-08-27",
+    "hoje": "2026-08-26"
+  },
+  "tipos": [
+    "onboarding",
+    "briefing",
+    "reuniao",
+    "whatsapp",
+    "alteracao_campanha",
+    "aprovacao",
+    "alerta"
+  ],
+  "eventos": [
+    {
+      "ts": "2026-06-15T10:00:00-03:00",
+      "tipo": "onboarding",
+      "ator": "Aline Ferraz",
+      "entidades": [
+        "cliente_housewhey",
+        "pessoa_aline",
+        "pessoa_rafael"
+      ],
+      "resumo": "SPOT assume a operação de mídia da Housewhey. Verba inicial de R$ 18.000/mês (R$ 15.000 Meta + R$ 3.000 Google). Rafael Menezes é o ponto único de aprovação do lado do cliente; Bianca Torres cuida de estoque e preço."
+    },
+    {
+      "ts": "2026-06-22T14:20:00-03:00",
+      "tipo": "briefing",
+      "ator": "Rafael Menezes",
+      "entidades": [
+        "cliente_housewhey",
+        "produto_omega3",
+        "canal_whatsapp"
+      ],
+      "resumo": "Briefing da linha Ômega 3 pelo grupo de WhatsApp. É a linha de maior margem (58%) e a prioridade do trimestre.",
+      "trecho": "Rafael: \"Foca em Ômega 3 no Q3. É onde a margem está e onde a gente perde pra farmácia por causa de preço, não de produto. Se a comunicação explicar EPA e DHA direito, a gente ganha. Whey e creatina mantém rodando, mas sem escalar.\""
+    },
+    {
+      "ts": "2026-07-18T11:05:00-03:00",
+      "tipo": "briefing",
+      "ator": "Luiza Prado",
+      "entidades": [
+        "produto_omega3",
+        "criativo_omega3_carrossel_beneficios_v1",
+        "criativo_omega3_vid_depoimento_dra_v3",
+        "criativo_omega3_est_oferta_frete_v1"
+      ],
+      "resumo": "Luiza entrega o primeiro pacote de criativos de Ômega 3: um carrossel de benefícios, um vídeo com nutricionista e um estático de oferta de frete. Rafael aprova os três sem alteração."
+    },
+    {
+      "ts": "2026-07-20T09:40:00-03:00",
+      "tipo": "alteracao_campanha",
+      "ator": "Aline Ferraz",
+      "entidades": [
+        "campanha_omega3",
+        "canal_meta_ads"
+      ],
+      "resumo": "Campanha \"HW | Ômega 3 | Conversão | Ago\" sobe com R$ 280/dia. Padrão de UTM definido com Carolina: utm_content = nome do anúncio, sempre."
+    },
+    {
+      "ts": "2026-07-31T15:10:00-03:00",
+      "tipo": "alteracao_campanha",
+      "ator": "Carolina Nunes",
+      "entidades": [
+        "campanha_omega3",
+        "criativo_omega3_vid_prova_social_v2"
+      ],
+      "resumo": "Sobe o omega3_vid_prova_social_v2 (vídeo de prova social, CTA \"Comprar agora\") com R$ 110/dia. Vira o melhor anúncio da conta em 3 dias: CPA de R$ 30."
+    },
+    {
+      "ts": "2026-08-06T16:00:00-03:00",
+      "tipo": "reuniao",
+      "ator": "Aline Ferraz",
+      "entidades": [
+        "cliente_housewhey",
+        "campanha_omega3",
+        "criativo_omega3_carrossel_beneficios_v1"
+      ],
+      "resumo": "Call semanal. Decisões: (1) escalar o prova social; (2) Luiza produz um UGC para substituir o carrossel de benefícios, que já dava sinal de desgaste; (3) manter whey e creatina no piloto automático.",
+      "trecho": "Carolina: \"O carrossel já tá em frequência 3,2 e o CTR caiu de 1,9 pra 1,5. Ele ainda paga, mas não por muito tempo.\" — Aline: \"Deixa rodar mais duas semanas enquanto a Luiza produz o substituto.\""
+    },
+    {
+      "ts": "2026-08-10T10:15:00-03:00",
+      "tipo": "alerta",
+      "ator": "Carolina Nunes",
+      "entidades": [
+        "criativo_omega3_carrossel_beneficios_v1"
+      ],
+      "resumo": "Alerta de frequência: carrossel_beneficios_v1 passa de 4,4 com CTR em 1,05%. CPA da semana em R$ 81 contra R$ 43 na primeira semana."
+    },
+    {
+      "ts": "2026-08-11T09:12:00-03:00",
+      "tipo": "alteracao_campanha",
+      "ator": "Carolina Nunes",
+      "entidades": [
+        "criativo_omega3_vid_prova_social_v2",
+        "campanha_omega3",
+        "canal_meta_ads"
+      ],
+      "resumo": "CAUSA-RAIZ: às 09:12, a pedido do Rafael, Carolina troca a URL de destino do omega3_vid_prova_social_v2 pelo encurtador hwy.link/o3ps, para que o link caiba no card de compartilhamento do WhatsApp e o cliente consiga contar cliques na ferramenta dele. O encurtador redireciona sem repassar a query string — as UTMs param de chegar ao site a partir desse momento.",
+      "trecho": "Rafael: \"Dá pra encurtar esse link? No WhatsApp ele vira um monstro e ninguém clica.\" — Carolina: \"Dá sim, troco agora.\""
+    },
+    {
+      "ts": "2026-08-11T09:40:00-03:00",
+      "tipo": "whatsapp",
+      "ator": "Rafael Menezes",
+      "entidades": [
+        "canal_whatsapp",
+        "criativo_omega3_vid_prova_social_v2"
+      ],
+      "resumo": "Rafael confirma no grupo que o link encurtado ficou melhor para compartilhar. Ninguém revisa o efeito nas UTMs."
+    },
+    {
+      "ts": "2026-08-13T09:00:00-03:00",
+      "tipo": "reuniao",
+      "ator": "Aline Ferraz",
+      "entidades": [
+        "cliente_housewhey",
+        "campanha_omega3"
+      ],
+      "resumo": "Call semanal. O relatório de atribuição já mostra queda nas vendas de Ômega 3, mas o time lê como sazonalidade de meio de mês. Decisão: aumentar a verba do prova social, que continua com o melhor CPA no gerenciador."
+    },
+    {
+      "ts": "2026-08-14T11:20:00-03:00",
+      "tipo": "alteracao_campanha",
+      "ator": "Aline Ferraz",
+      "entidades": [
+        "criativo_omega3_vid_prova_social_v2",
+        "campanha_omega3"
+      ],
+      "resumo": "Verba do omega3_vid_prova_social_v2 sobe de R$ 100 para R$ 128/dia. Efeito colateral: o buraco de atribuição cresce junto com a verba."
+    },
+    {
+      "ts": "2026-08-18T08:50:00-03:00",
+      "tipo": "alerta",
+      "ator": "Carolina Nunes",
+      "entidades": [
+        "campanha_omega3",
+        "tarefa_investigar_cpa_omega3"
+      ],
+      "resumo": "Alerta no relatório de atribuição: CPA aparente da Ômega 3 estoura. Leads com utm_content preenchido caem 59% contra a semana de 03–09/08, enquanto o Meta reporta MAIS conversões."
+    },
+    {
+      "ts": "2026-08-19T14:30:00-03:00",
+      "tipo": "whatsapp",
+      "ator": "Rafael Menezes",
+      "entidades": [
+        "canal_whatsapp",
+        "cliente_housewhey",
+        "tarefa_investigar_cpa_omega3"
+      ],
+      "resumo": "Rafael cobra explicação no grupo. O faturamento da loja não caiu; o relatório da agência diz que caiu.",
+      "trecho": "Rafael: \"Gente, o faturamento aqui tá normal, agosto até melhor que julho. Mas o relatório de vocês diz que a Ômega 3 caiu quase 60%. Uma das duas contas tá errada e eu preciso saber qual antes da reunião de quinta.\""
+    },
+    {
+      "ts": "2026-08-20T10:00:00-03:00",
+      "tipo": "aprovacao",
+      "ator": "Luiza Prado",
+      "entidades": [
+        "criativo_omega3_vid_ugc_rotina_v1",
+        "tarefa_aprovar_ugc",
+        "pessoa_rafael"
+      ],
+      "resumo": "UGC de Ômega 3 (omega3_vid_ugc_rotina_v1) enviado para aprovação do Rafael. É o substituto planejado do carrossel saturado. PENDENTE."
+    },
+    {
+      "ts": "2026-08-21T17:40:00-03:00",
+      "tipo": "aprovacao",
+      "ator": "Luiza Prado",
+      "entidades": [
+        "criativo_whey_est_combo_setembro_v1",
+        "tarefa_aprovar_combo_setembro",
+        "pessoa_rafael"
+      ],
+      "resumo": "Combo de setembro (Whey 900g + Creatina 300g por R$ 289) enviado para aprovação. Precisa subir dia 01/09. PENDENTE."
+    },
+    {
+      "ts": "2026-08-22T15:00:00-03:00",
+      "tipo": "whatsapp",
+      "ator": "Rafael Menezes",
+      "entidades": [
+        "canal_whatsapp",
+        "tarefa_verba_setembro"
+      ],
+      "resumo": "Rafael sinaliza que pode subir a verba de setembro de R$ 18.000 para R$ 22.000, condicionado a entender o que aconteceu com a Ômega 3. Decisão PENDENTE."
+    },
+    {
+      "ts": "2026-08-24T09:15:00-03:00",
+      "tipo": "alerta",
+      "ator": "Carolina Nunes",
+      "entidades": [
+        "criativo_omega3_carrossel_beneficios_v1",
+        "tarefa_pausar_carrossel"
+      ],
+      "resumo": "Carrossel de benefícios fecha a semana com frequência 5,6 e CTR 0,71%. R$ 380 gastos para 4 conversões (CPA R$ 95, contra R$ 30 do prova social). Proposta de pausa registrada."
+    },
+    {
+      "ts": "2026-08-25T18:30:00-03:00",
+      "tipo": "reuniao",
+      "ator": "Aline Ferraz",
+      "entidades": [
+        "cliente_housewhey"
+      ],
+      "resumo": "Call semanal com a Housewhey confirmada para 27/08 às 10h. Pauta em aberto: explicar a Ômega 3, decidir a pausa do carrossel, destravar as duas aprovações e fechar a verba de setembro."
+    }
+  ]
+}

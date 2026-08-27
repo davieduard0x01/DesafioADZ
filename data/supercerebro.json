@@ -1,0 +1,865 @@
+{
+  "_aviso": "DADOS FICTÍCIOS gerados para o desafio AdzHub.",
+  "gerado_em": "2026-08-26",
+  "conta": "Housewhey",
+  "nodes": [
+    {
+      "id": "cliente_housewhey",
+      "type": "cliente",
+      "label": "Housewhey",
+      "props": {
+        "segmento": "E-commerce de suplementos",
+        "site": "https://housewhey.com.br",
+        "agencia": "SPOT",
+        "cliente_desde": "2026-06-15",
+        "verba_midia_mensal": 18000,
+        "fee_agencia_mensal": 4500,
+        "ticket_medio": 186,
+        "crm": "RD Station"
+      }
+    },
+    {
+      "id": "pessoa_aline",
+      "type": "pessoa",
+      "label": "Aline Ferraz",
+      "props": {
+        "papel": "Gestora de tráfego",
+        "empresa": "SPOT",
+        "email": "aline@spot.ag",
+        "decisoes": "verba, escala, pausa de campanha"
+      }
+    },
+    {
+      "id": "pessoa_carolina",
+      "type": "pessoa",
+      "label": "Carolina Nunes",
+      "props": {
+        "papel": "Analista de performance",
+        "empresa": "SPOT",
+        "email": "carolina@spot.ag",
+        "decisoes": "setup de anúncio, UTMs, relatórios"
+      }
+    },
+    {
+      "id": "pessoa_luiza",
+      "type": "pessoa",
+      "label": "Luiza Prado",
+      "props": {
+        "papel": "Criação e copy",
+        "empresa": "SPOT",
+        "email": "luiza@spot.ag",
+        "decisoes": "roteiro, headline, CTA"
+      }
+    },
+    {
+      "id": "pessoa_rafael",
+      "type": "pessoa",
+      "label": "Rafael Menezes",
+      "props": {
+        "papel": "Head de Marketing",
+        "empresa": "Housewhey",
+        "email": "rafael@housewhey.com.br",
+        "decisoes": "aprovação de criativo, verba, calendário promocional"
+      }
+    },
+    {
+      "id": "pessoa_bianca",
+      "type": "pessoa",
+      "label": "Bianca Torres",
+      "props": {
+        "papel": "Analista de e-commerce",
+        "empresa": "Housewhey",
+        "email": "bianca@housewhey.com.br",
+        "decisoes": "estoque, preço, frete"
+      }
+    },
+    {
+      "id": "produto_omega3",
+      "type": "produto",
+      "label": "Ômega 3 1000mg",
+      "props": {
+        "preco": 89,
+        "combo_3_potes": 189,
+        "margem": 0.58,
+        "lp": "/omega-3-1000mg",
+        "prioridade": "linha principal do trimestre"
+      }
+    },
+    {
+      "id": "produto_whey",
+      "type": "produto",
+      "label": "Whey Protein Concentrado 900g",
+      "props": {
+        "preco": 249,
+        "margem": 0.41,
+        "lp": "/whey-protein-concentrado"
+      }
+    },
+    {
+      "id": "produto_creatina",
+      "type": "produto",
+      "label": "Creatina Monohidratada 300g",
+      "props": {
+        "preco": 159,
+        "margem": 0.47,
+        "lp": "/creatina-monohidratada"
+      }
+    },
+    {
+      "id": "produto_multi",
+      "type": "produto",
+      "label": "Multivitamínico A-Z",
+      "props": {
+        "preco": 99,
+        "margem": 0.52,
+        "lp": "/multivitaminico-az"
+      }
+    },
+    {
+      "id": "canal_meta_ads",
+      "type": "canal",
+      "label": "Meta Ads",
+      "props": {
+        "conta": "act_318842907",
+        "verba_mensal": 15000
+      }
+    },
+    {
+      "id": "canal_google_ads",
+      "type": "canal",
+      "label": "Google Ads",
+      "props": {
+        "conta": "784-119-3320",
+        "verba_mensal": 3000
+      }
+    },
+    {
+      "id": "canal_ga4",
+      "type": "canal",
+      "label": "Google Analytics 4",
+      "props": {
+        "property_id": "properties/419883210",
+        "papel": "fonte de verdade de tráfego"
+      }
+    },
+    {
+      "id": "canal_crm",
+      "type": "canal",
+      "label": "CRM (RD Station)",
+      "props": {
+        "papel": "fonte de verdade de venda",
+        "join": "utm_content"
+      }
+    },
+    {
+      "id": "canal_whatsapp",
+      "type": "canal",
+      "label": "WhatsApp — Grupo SPOT × Housewhey",
+      "props": {
+        "participantes": 5
+      }
+    },
+    {
+      "id": "campanha_omega3",
+      "type": "campanha",
+      "label": "HW | Ômega 3 | Conversão | Ago",
+      "props": {
+        "plataforma": "Meta Ads",
+        "campaign_id": "23860991102",
+        "objetivo": "Vendas no site",
+        "verba_diaria": 280,
+        "status": "ativa",
+        "utm_campaign": "omega3_conversao_ago"
+      }
+    },
+    {
+      "id": "campanha_whey",
+      "type": "campanha",
+      "label": "HW | Whey Protein | Conversão | Ago",
+      "props": {
+        "plataforma": "Meta Ads",
+        "campaign_id": "23860991103",
+        "objetivo": "Vendas no site",
+        "verba_diaria": 130,
+        "status": "ativa",
+        "utm_campaign": "whey_conversao_ago"
+      }
+    },
+    {
+      "id": "campanha_creatina",
+      "type": "campanha",
+      "label": "HW | Creatina | Conversão | Ago",
+      "props": {
+        "plataforma": "Meta Ads",
+        "campaign_id": "23860991104",
+        "objetivo": "Vendas no site",
+        "verba_diaria": 80,
+        "status": "ativa",
+        "utm_campaign": "creatina_conversao_ago"
+      }
+    },
+    {
+      "id": "campanha_multi",
+      "type": "campanha",
+      "label": "HW | Multivitamínico | Remarketing | Ago",
+      "props": {
+        "plataforma": "Meta Ads",
+        "campaign_id": "23860991105",
+        "objetivo": "Vendas no site",
+        "verba_diaria": 50,
+        "status": "ativa",
+        "utm_campaign": "multi_remarketing_ago"
+      }
+    },
+    {
+      "id": "gcampanha_search_marca_exata",
+      "type": "campanha",
+      "label": "HW | Search | Marca",
+      "props": {
+        "plataforma": "Google Ads",
+        "campaign_id": "1789004411",
+        "tipo": "Search",
+        "verba_diaria": 34.29,
+        "status": "ativa",
+        "utm_content": "search_marca_exata"
+      }
+    },
+    {
+      "id": "gcampanha_shopping_omega3_feed",
+      "type": "campanha",
+      "label": "HW | Shopping | Ômega 3",
+      "props": {
+        "plataforma": "Google Ads",
+        "campaign_id": "1789004412",
+        "tipo": "Shopping",
+        "verba_diaria": 72.86,
+        "status": "ativa",
+        "utm_content": "shopping_omega3_feed"
+      }
+    },
+    {
+      "id": "criativo_omega3_vid_prova_social_v2",
+      "type": "criativo",
+      "label": "omega3_vid_prova_social_v2",
+      "props": {
+        "formato": "video",
+        "cta": "Comprar agora",
+        "status": "ativo",
+        "produto": "Ômega 3",
+        "cpa": 30,
+        "ctr": 2.61
+      }
+    },
+    {
+      "id": "criativo_omega3_vid_depoimento_dra_v3",
+      "type": "criativo",
+      "label": "omega3_vid_depoimento_dra_v3",
+      "props": {
+        "formato": "video",
+        "cta": "Quero meu frasco",
+        "status": "ativo",
+        "produto": "Ômega 3",
+        "cpa": 38,
+        "ctr": 2.11
+      }
+    },
+    {
+      "id": "criativo_omega3_carrossel_beneficios_v1",
+      "type": "criativo",
+      "label": "omega3_carrossel_beneficios_v1",
+      "props": {
+        "formato": "carrossel",
+        "cta": "Saiba mais",
+        "status": "ativo",
+        "produto": "Ômega 3",
+        "cpa": 59.73,
+        "ctr": 1.3
+      }
+    },
+    {
+      "id": "criativo_omega3_est_oferta_frete_v1",
+      "type": "criativo",
+      "label": "omega3_est_oferta_frete_v1",
+      "props": {
+        "formato": "estatico",
+        "cta": "Aproveitar oferta",
+        "status": "ativo",
+        "produto": "Ômega 3",
+        "cpa": 36.19,
+        "ctr": 1.72
+      }
+    },
+    {
+      "id": "criativo_whey_vid_receita_shake_v2",
+      "type": "criativo",
+      "label": "whey_vid_receita_shake_v2",
+      "props": {
+        "formato": "video",
+        "cta": "Ver sabores",
+        "status": "ativo",
+        "produto": "Whey Protein",
+        "cpa": 45,
+        "ctr": 1.89
+      }
+    },
+    {
+      "id": "criativo_whey_carrossel_sabores_v3",
+      "type": "criativo",
+      "label": "whey_carrossel_sabores_v3",
+      "props": {
+        "formato": "carrossel",
+        "cta": "Comprar agora",
+        "status": "ativo",
+        "produto": "Whey Protein",
+        "cpa": 56,
+        "ctr": 1.44
+      }
+    },
+    {
+      "id": "criativo_whey_est_combo_v1",
+      "type": "criativo",
+      "label": "whey_est_combo_v1",
+      "props": {
+        "formato": "estatico",
+        "cta": "Saiba mais",
+        "status": "ativo",
+        "produto": "Whey Protein",
+        "cpa": 136,
+        "ctr": 0.67
+      }
+    },
+    {
+      "id": "criativo_creatina_vid_treino_v1",
+      "type": "criativo",
+      "label": "creatina_vid_treino_v1",
+      "props": {
+        "formato": "video",
+        "cta": "Quero minha creatina",
+        "status": "ativo",
+        "produto": "Creatina",
+        "cpa": 48.28,
+        "ctr": 1.79
+      }
+    },
+    {
+      "id": "criativo_creatina_est_pote_v2",
+      "type": "criativo",
+      "label": "creatina_est_pote_v2",
+      "props": {
+        "formato": "estatico",
+        "cta": "Ver mais",
+        "status": "ativo",
+        "produto": "Creatina",
+        "cpa": 66.67,
+        "ctr": 0.83
+      }
+    },
+    {
+      "id": "criativo_multi_est_remarketing_v1",
+      "type": "criativo",
+      "label": "multi_est_remarketing_v1",
+      "props": {
+        "formato": "estatico",
+        "cta": "Finalizar compra",
+        "status": "ativo",
+        "produto": "Multivitamínico",
+        "cpa": 30.34,
+        "ctr": 3.41
+      }
+    },
+    {
+      "id": "criativo_multi_carrossel_kit_v1",
+      "type": "criativo",
+      "label": "multi_carrossel_kit_v1",
+      "props": {
+        "formato": "carrossel",
+        "cta": "Montar meu kit",
+        "status": "ativo",
+        "produto": "Multivitamínico",
+        "cpa": 43.33,
+        "ctr": 2.22
+      }
+    },
+    {
+      "id": "criativo_omega3_vid_ugc_rotina_v1",
+      "type": "criativo",
+      "label": "omega3_vid_ugc_rotina_v1",
+      "props": {
+        "formato": "video",
+        "cta": "Comprar agora",
+        "status": "em_aprovacao",
+        "produto": "Ômega 3",
+        "cpa": null,
+        "ctr": null
+      }
+    },
+    {
+      "id": "criativo_whey_est_combo_setembro_v1",
+      "type": "criativo",
+      "label": "whey_est_combo_setembro_v1",
+      "props": {
+        "formato": "estatico",
+        "cta": "Quero o combo",
+        "status": "em_aprovacao",
+        "produto": "Whey Protein",
+        "cpa": null,
+        "ctr": null
+      }
+    },
+    {
+      "id": "tarefa_aprovar_ugc",
+      "type": "tarefa",
+      "label": "Aprovar omega3_vid_ugc_rotina_v1",
+      "props": {
+        "status": "aguardando_cliente",
+        "desde": "2026-08-20",
+        "prazo": "2026-08-27",
+        "impacto": "É a substituição planejada do carrossel saturado. Cada dia parado é verba rodando no criativo velho."
+      }
+    },
+    {
+      "id": "tarefa_aprovar_combo_setembro",
+      "type": "tarefa",
+      "label": "Aprovar whey_est_combo_setembro_v1",
+      "props": {
+        "status": "aguardando_cliente",
+        "desde": "2026-08-21",
+        "prazo": "2026-08-28",
+        "impacto": "A campanha precisa subir dia 01/09; sem aprovação até 28/08 o combo perde a primeira quinzena."
+      }
+    },
+    {
+      "id": "tarefa_investigar_cpa_omega3",
+      "type": "tarefa",
+      "label": "Investigar queda das vendas atribuídas de Ômega 3",
+      "props": {
+        "status": "em_andamento",
+        "desde": "2026-08-18",
+        "prazo": "2026-08-27",
+        "responsavel": "Carolina Nunes",
+        "impacto": "Rafael cobrou explicação em 19/08. O faturamento não caiu; o relatório de atribuição sim."
+      }
+    },
+    {
+      "id": "tarefa_pausar_carrossel",
+      "type": "tarefa",
+      "label": "Pausar omega3_carrossel_beneficios_v1 e subir substituto",
+      "props": {
+        "status": "proposta",
+        "desde": "2026-08-24",
+        "prazo": "2026-08-27",
+        "responsavel": "Aline Ferraz",
+        "impacto": "Frequência 5,6 e CTR 0,71%. R$ 380 na última semana para 4 conversões."
+      }
+    },
+    {
+      "id": "tarefa_verba_setembro",
+      "type": "tarefa",
+      "label": "Fechar verba de setembro",
+      "props": {
+        "status": "aguardando_decisao",
+        "desde": "2026-08-22",
+        "prazo": "2026-08-29",
+        "impacto": "Rafael sinalizou possível aumento para R$ 22.000 se a Ômega 3 comprovar retorno."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "cliente_housewhey",
+      "to": "canal_meta_ads",
+      "rel": "veicula_em"
+    },
+    {
+      "from": "cliente_housewhey",
+      "to": "canal_google_ads",
+      "rel": "veicula_em"
+    },
+    {
+      "from": "cliente_housewhey",
+      "to": "canal_ga4",
+      "rel": "mede_em"
+    },
+    {
+      "from": "cliente_housewhey",
+      "to": "canal_crm",
+      "rel": "mede_em"
+    },
+    {
+      "from": "cliente_housewhey",
+      "to": "canal_whatsapp",
+      "rel": "conversa_em"
+    },
+    {
+      "from": "pessoa_aline",
+      "to": "cliente_housewhey",
+      "rel": "gerencia",
+      "props": {
+        "desde": "2026-06-15"
+      }
+    },
+    {
+      "from": "pessoa_carolina",
+      "to": "cliente_housewhey",
+      "rel": "atende"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "cliente_housewhey",
+      "rel": "atende"
+    },
+    {
+      "from": "pessoa_rafael",
+      "to": "cliente_housewhey",
+      "rel": "trabalha_em"
+    },
+    {
+      "from": "pessoa_bianca",
+      "to": "cliente_housewhey",
+      "rel": "trabalha_em"
+    },
+    {
+      "from": "pessoa_carolina",
+      "to": "pessoa_aline",
+      "rel": "reporta_para"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "pessoa_aline",
+      "rel": "reporta_para"
+    },
+    {
+      "from": "campanha_omega3",
+      "to": "cliente_housewhey",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "campanha_omega3",
+      "to": "canal_meta_ads",
+      "rel": "veicula_em"
+    },
+    {
+      "from": "campanha_omega3",
+      "to": "produto_omega3",
+      "rel": "promove"
+    },
+    {
+      "from": "pessoa_aline",
+      "to": "campanha_omega3",
+      "rel": "responsavel_por"
+    },
+    {
+      "from": "campanha_whey",
+      "to": "cliente_housewhey",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "campanha_whey",
+      "to": "canal_meta_ads",
+      "rel": "veicula_em"
+    },
+    {
+      "from": "campanha_whey",
+      "to": "produto_whey",
+      "rel": "promove"
+    },
+    {
+      "from": "pessoa_aline",
+      "to": "campanha_whey",
+      "rel": "responsavel_por"
+    },
+    {
+      "from": "campanha_creatina",
+      "to": "cliente_housewhey",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "campanha_creatina",
+      "to": "canal_meta_ads",
+      "rel": "veicula_em"
+    },
+    {
+      "from": "campanha_creatina",
+      "to": "produto_creatina",
+      "rel": "promove"
+    },
+    {
+      "from": "pessoa_aline",
+      "to": "campanha_creatina",
+      "rel": "responsavel_por"
+    },
+    {
+      "from": "campanha_multi",
+      "to": "cliente_housewhey",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "campanha_multi",
+      "to": "canal_meta_ads",
+      "rel": "veicula_em"
+    },
+    {
+      "from": "campanha_multi",
+      "to": "produto_multi",
+      "rel": "promove"
+    },
+    {
+      "from": "pessoa_aline",
+      "to": "campanha_multi",
+      "rel": "responsavel_por"
+    },
+    {
+      "from": "gcampanha_search_marca_exata",
+      "to": "cliente_housewhey",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "gcampanha_search_marca_exata",
+      "to": "canal_google_ads",
+      "rel": "veicula_em"
+    },
+    {
+      "from": "pessoa_aline",
+      "to": "gcampanha_search_marca_exata",
+      "rel": "responsavel_por"
+    },
+    {
+      "from": "gcampanha_shopping_omega3_feed",
+      "to": "cliente_housewhey",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "gcampanha_shopping_omega3_feed",
+      "to": "canal_google_ads",
+      "rel": "veicula_em"
+    },
+    {
+      "from": "pessoa_aline",
+      "to": "gcampanha_shopping_omega3_feed",
+      "rel": "responsavel_por"
+    },
+    {
+      "from": "criativo_omega3_vid_prova_social_v2",
+      "to": "campanha_omega3",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_omega3_vid_prova_social_v2",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_omega3_vid_depoimento_dra_v3",
+      "to": "campanha_omega3",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_omega3_vid_depoimento_dra_v3",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_omega3_carrossel_beneficios_v1",
+      "to": "campanha_omega3",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_omega3_carrossel_beneficios_v1",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_omega3_est_oferta_frete_v1",
+      "to": "campanha_omega3",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_omega3_est_oferta_frete_v1",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_whey_vid_receita_shake_v2",
+      "to": "campanha_whey",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_whey_vid_receita_shake_v2",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_whey_carrossel_sabores_v3",
+      "to": "campanha_whey",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_whey_carrossel_sabores_v3",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_whey_est_combo_v1",
+      "to": "campanha_whey",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_whey_est_combo_v1",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_creatina_vid_treino_v1",
+      "to": "campanha_creatina",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_creatina_vid_treino_v1",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_creatina_est_pote_v2",
+      "to": "campanha_creatina",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_creatina_est_pote_v2",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_multi_est_remarketing_v1",
+      "to": "campanha_multi",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_multi_est_remarketing_v1",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_multi_carrossel_kit_v1",
+      "to": "campanha_multi",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_multi_carrossel_kit_v1",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_omega3_vid_ugc_rotina_v1",
+      "to": "campanha_omega3",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_omega3_vid_ugc_rotina_v1",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_omega3_vid_ugc_rotina_v1",
+      "to": "pessoa_rafael",
+      "rel": "aguarda_aprovacao_de",
+      "props": {
+        "desde": "2026-08-20"
+      }
+    },
+    {
+      "from": "criativo_whey_est_combo_setembro_v1",
+      "to": "campanha_whey",
+      "rel": "pertence_a"
+    },
+    {
+      "from": "pessoa_luiza",
+      "to": "criativo_whey_est_combo_setembro_v1",
+      "rel": "criou"
+    },
+    {
+      "from": "criativo_whey_est_combo_setembro_v1",
+      "to": "pessoa_rafael",
+      "rel": "aguarda_aprovacao_de",
+      "props": {
+        "desde": "2026-08-21"
+      }
+    },
+    {
+      "from": "pessoa_carolina",
+      "to": "criativo_omega3_vid_prova_social_v2",
+      "rel": "alterou",
+      "props": {
+        "quando": "2026-08-11T09:12:00-03:00",
+        "o_que": "trocou a URL de destino pelo encurtador hwy.link/o3ps"
+      }
+    },
+    {
+      "from": "criativo_omega3_vid_prova_social_v2",
+      "to": "tarefa_investigar_cpa_omega3",
+      "rel": "causa_provavel_de"
+    },
+    {
+      "from": "criativo_omega3_carrossel_beneficios_v1",
+      "to": "tarefa_pausar_carrossel",
+      "rel": "motivo_de"
+    },
+    {
+      "from": "criativo_omega3_vid_ugc_rotina_v1",
+      "to": "tarefa_aprovar_ugc",
+      "rel": "objeto_de"
+    },
+    {
+      "from": "criativo_whey_est_combo_setembro_v1",
+      "to": "tarefa_aprovar_combo_setembro",
+      "rel": "objeto_de"
+    },
+    {
+      "from": "tarefa_aprovar_ugc",
+      "to": "pessoa_rafael",
+      "rel": "aguarda_aprovacao_de"
+    },
+    {
+      "from": "tarefa_aprovar_combo_setembro",
+      "to": "pessoa_rafael",
+      "rel": "aguarda_aprovacao_de"
+    },
+    {
+      "from": "tarefa_verba_setembro",
+      "to": "pessoa_rafael",
+      "rel": "aguarda_aprovacao_de"
+    },
+    {
+      "from": "tarefa_investigar_cpa_omega3",
+      "to": "pessoa_carolina",
+      "rel": "responsavel_por"
+    },
+    {
+      "from": "tarefa_pausar_carrossel",
+      "to": "pessoa_aline",
+      "rel": "responsavel_por"
+    },
+    {
+      "from": "tarefa_aprovar_ugc",
+      "to": "campanha_omega3",
+      "rel": "impacta"
+    },
+    {
+      "from": "tarefa_pausar_carrossel",
+      "to": "campanha_omega3",
+      "rel": "impacta"
+    },
+    {
+      "from": "tarefa_investigar_cpa_omega3",
+      "to": "campanha_omega3",
+      "rel": "impacta"
+    },
+    {
+      "from": "pessoa_rafael",
+      "to": "campanha_omega3",
+      "rel": "aprovou",
+      "props": {
+        "quando": "2026-07-20"
+      }
+    }
+  ]
+}

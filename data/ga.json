@@ -1,0 +1,2371 @@
+{
+  "_aviso": "DADOS FICTÍCIOS gerados para o desafio AdzHub.",
+  "propriedade": {
+    "property_id": "properties/419883210",
+    "nome": "Housewhey — GA4",
+    "fuso": "America/Sao_Paulo"
+  },
+  "periodo": {
+    "inicio": "2026-07-27",
+    "fim": "2026-08-23"
+  },
+  "notas": {
+    "anomalia": "A partir de 2026-08-11 o canal direct/(none) sobe e paid_social cai no mesmo volume: são as sessões do anúncio omega3_vid_prova_social_v2, cujo link virou encurtador e perdeu as UTMs."
+  },
+  "sessoes_por_canal_dia": [
+    {
+      "date": "2026-07-27",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 363,
+      "usuarios": 312,
+      "conversoes": 11
+    },
+    {
+      "date": "2026-07-27",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 80,
+      "usuarios": 69,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-27",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 88,
+      "usuarios": 76,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-27",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 206,
+      "usuarios": 177,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-27",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 38,
+      "usuarios": 33,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-07-27",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 53,
+      "usuarios": 46,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-28",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 372,
+      "usuarios": 320,
+      "conversoes": 12
+    },
+    {
+      "date": "2026-07-28",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 73,
+      "usuarios": 63,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-28",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 98,
+      "usuarios": 84,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-28",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 230,
+      "usuarios": 198,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-07-28",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 38,
+      "usuarios": 33,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-07-28",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 52,
+      "usuarios": 45,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-29",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 375,
+      "usuarios": 323,
+      "conversoes": 12
+    },
+    {
+      "date": "2026-07-29",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 84,
+      "usuarios": 72,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-29",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 88,
+      "usuarios": 76,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-29",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 209,
+      "usuarios": 180,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-07-29",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 33,
+      "usuarios": 28,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-07-29",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 57,
+      "usuarios": 49,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-30",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 357,
+      "usuarios": 307,
+      "conversoes": 10
+    },
+    {
+      "date": "2026-07-30",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 76,
+      "usuarios": 65,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-07-30",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 83,
+      "usuarios": 71,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-30",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 197,
+      "usuarios": 169,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-30",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 34,
+      "usuarios": 29,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-07-30",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 49,
+      "usuarios": 42,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-31",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 492,
+      "usuarios": 423,
+      "conversoes": 17
+    },
+    {
+      "date": "2026-07-31",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 86,
+      "usuarios": 74,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-31",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 89,
+      "usuarios": 77,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-31",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 210,
+      "usuarios": 181,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-07-31",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 28,
+      "usuarios": 24,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-07-31",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 51,
+      "usuarios": 44,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-01",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 435,
+      "usuarios": 374,
+      "conversoes": 13
+    },
+    {
+      "date": "2026-08-01",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 74,
+      "usuarios": 64,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-01",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 84,
+      "usuarios": 72,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-01",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 195,
+      "usuarios": 168,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-01",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 33,
+      "usuarios": 28,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-01",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 41,
+      "usuarios": 35,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-02",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 411,
+      "usuarios": 353,
+      "conversoes": 9
+    },
+    {
+      "date": "2026-08-02",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 68,
+      "usuarios": 58,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-02",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 80,
+      "usuarios": 69,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-02",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 184,
+      "usuarios": 158,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-02",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 26,
+      "usuarios": 22,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-02",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 38,
+      "usuarios": 33,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-03",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 430,
+      "usuarios": 370,
+      "conversoes": 14
+    },
+    {
+      "date": "2026-08-03",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 74,
+      "usuarios": 64,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-03",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 100,
+      "usuarios": 86,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-03",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 213,
+      "usuarios": 183,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-03",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 37,
+      "usuarios": 32,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-03",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 42,
+      "usuarios": 36,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-04",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 438,
+      "usuarios": 377,
+      "conversoes": 14
+    },
+    {
+      "date": "2026-08-04",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 88,
+      "usuarios": 76,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-04",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 100,
+      "usuarios": 86,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-04",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 218,
+      "usuarios": 187,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-04",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 41,
+      "usuarios": 35,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-04",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 43,
+      "usuarios": 37,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-05",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 450,
+      "usuarios": 387,
+      "conversoes": 14
+    },
+    {
+      "date": "2026-08-05",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 81,
+      "usuarios": 70,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-05",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 89,
+      "usuarios": 77,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-05",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 233,
+      "usuarios": 200,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-05",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 38,
+      "usuarios": 33,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-05",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 35,
+      "usuarios": 30,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-06",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 429,
+      "usuarios": 369,
+      "conversoes": 12
+    },
+    {
+      "date": "2026-08-06",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 75,
+      "usuarios": 65,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-06",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 92,
+      "usuarios": 79,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-06",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 228,
+      "usuarios": 196,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-06",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 28,
+      "usuarios": 24,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-06",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 55,
+      "usuarios": 47,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-07",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 433,
+      "usuarios": 372,
+      "conversoes": 16
+    },
+    {
+      "date": "2026-08-07",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 93,
+      "usuarios": 80,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-07",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 100,
+      "usuarios": 86,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-07",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 224,
+      "usuarios": 193,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-07",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 43,
+      "usuarios": 37,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-07",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 33,
+      "usuarios": 28,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-08",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 389,
+      "usuarios": 335,
+      "conversoes": 10
+    },
+    {
+      "date": "2026-08-08",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 65,
+      "usuarios": 56,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-08",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 89,
+      "usuarios": 77,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-08",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 193,
+      "usuarios": 166,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-08",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 29,
+      "usuarios": 25,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-08",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 50,
+      "usuarios": 43,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-09",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 370,
+      "usuarios": 318,
+      "conversoes": 8
+    },
+    {
+      "date": "2026-08-09",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 69,
+      "usuarios": 59,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-09",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 76,
+      "usuarios": 65,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-09",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 193,
+      "usuarios": 166,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-09",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 27,
+      "usuarios": 23,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-09",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 32,
+      "usuarios": 28,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-10",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 413,
+      "usuarios": 355,
+      "conversoes": 11
+    },
+    {
+      "date": "2026-08-10",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 77,
+      "usuarios": 66,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-10",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 86,
+      "usuarios": 74,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-10",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 218,
+      "usuarios": 187,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-10",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 40,
+      "usuarios": 34,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-10",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 53,
+      "usuarios": 46,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-11",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 332,
+      "usuarios": 286,
+      "conversoes": 11
+    },
+    {
+      "date": "2026-08-11",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 83,
+      "usuarios": 71,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-11",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 181,
+      "usuarios": 156,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-11",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 211,
+      "usuarios": 181,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-11",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 32,
+      "usuarios": 28,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-11",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 41,
+      "usuarios": 35,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-12",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 334,
+      "usuarios": 287,
+      "conversoes": 12
+    },
+    {
+      "date": "2026-08-12",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 80,
+      "usuarios": 69,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-12",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 174,
+      "usuarios": 150,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-12",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 229,
+      "usuarios": 197,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-12",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 31,
+      "usuarios": 27,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-12",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 49,
+      "usuarios": 42,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-13",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 326,
+      "usuarios": 280,
+      "conversoes": 9
+    },
+    {
+      "date": "2026-08-13",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 80,
+      "usuarios": 69,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-13",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 176,
+      "usuarios": 151,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-13",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 224,
+      "usuarios": 193,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-13",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 38,
+      "usuarios": 33,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-13",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 44,
+      "usuarios": 38,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-14",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 345,
+      "usuarios": 297,
+      "conversoes": 11
+    },
+    {
+      "date": "2026-08-14",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 85,
+      "usuarios": 73,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-14",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 198,
+      "usuarios": 170,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-14",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 219,
+      "usuarios": 188,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-14",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 29,
+      "usuarios": 25,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-14",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 35,
+      "usuarios": 30,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-15",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 297,
+      "usuarios": 255,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-15",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 76,
+      "usuarios": 65,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-15",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 159,
+      "usuarios": 137,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-15",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 191,
+      "usuarios": 164,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-15",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 34,
+      "usuarios": 29,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-15",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 41,
+      "usuarios": 35,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-16",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 288,
+      "usuarios": 248,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-16",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 68,
+      "usuarios": 58,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-16",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 154,
+      "usuarios": 132,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-16",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 177,
+      "usuarios": 152,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-16",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 33,
+      "usuarios": 28,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-16",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 33,
+      "usuarios": 28,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-17",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 302,
+      "usuarios": 260,
+      "conversoes": 8
+    },
+    {
+      "date": "2026-08-17",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 80,
+      "usuarios": 69,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-17",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 218,
+      "usuarios": 187,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-17",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 207,
+      "usuarios": 178,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-17",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 42,
+      "usuarios": 36,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-17",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 39,
+      "usuarios": 34,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-18",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 309,
+      "usuarios": 266,
+      "conversoes": 9
+    },
+    {
+      "date": "2026-08-18",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 84,
+      "usuarios": 72,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-18",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 217,
+      "usuarios": 187,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-18",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 209,
+      "usuarios": 180,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-18",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 35,
+      "usuarios": 30,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-18",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 37,
+      "usuarios": 32,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-19",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 316,
+      "usuarios": 272,
+      "conversoes": 11
+    },
+    {
+      "date": "2026-08-19",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 85,
+      "usuarios": 73,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-19",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 198,
+      "usuarios": 170,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-19",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 216,
+      "usuarios": 186,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-19",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 33,
+      "usuarios": 28,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-19",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 38,
+      "usuarios": 33,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-20",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 302,
+      "usuarios": 260,
+      "conversoes": 8
+    },
+    {
+      "date": "2026-08-20",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 72,
+      "usuarios": 62,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-20",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 205,
+      "usuarios": 176,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-20",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 211,
+      "usuarios": 181,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-20",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 39,
+      "usuarios": 34,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-20",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 40,
+      "usuarios": 34,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-21",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 297,
+      "usuarios": 255,
+      "conversoes": 10
+    },
+    {
+      "date": "2026-08-21",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 84,
+      "usuarios": 72,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-21",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 220,
+      "usuarios": 189,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-21",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 227,
+      "usuarios": 195,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-21",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 41,
+      "usuarios": 35,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-21",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 47,
+      "usuarios": 40,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-22",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 268,
+      "usuarios": 230,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-22",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 70,
+      "usuarios": 60,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-22",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 191,
+      "usuarios": 164,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-22",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 178,
+      "usuarios": 153,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-22",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 34,
+      "usuarios": 29,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-22",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 38,
+      "usuarios": 33,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-23",
+      "canal_agrupado": "paid_social",
+      "source": "facebook",
+      "medium": "paid_social",
+      "sessions": 260,
+      "usuarios": 224,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-23",
+      "canal_agrupado": "paid_search",
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 66,
+      "usuarios": 57,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-23",
+      "canal_agrupado": "direct",
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 181,
+      "usuarios": 156,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-23",
+      "canal_agrupado": "organic_search",
+      "source": "google",
+      "medium": "organic",
+      "sessions": 180,
+      "usuarios": 155,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-23",
+      "canal_agrupado": "referral",
+      "source": "blog.housewhey.com.br",
+      "medium": "referral",
+      "sessions": 37,
+      "usuarios": 32,
+      "conversoes": 0
+    },
+    {
+      "date": "2026-08-23",
+      "canal_agrupado": "email",
+      "source": "rdstation",
+      "medium": "email",
+      "sessions": 37,
+      "usuarios": 32,
+      "conversoes": 1
+    }
+  ],
+  "sessoes_por_landing_page_dia": [
+    {
+      "date": "2026-07-27",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 255,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-07-27",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 163,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-07-27",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 102,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-27",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 69,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-27",
+      "landing_page": "/",
+      "sessions": 240,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-07-28",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 268,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-07-28",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 173,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-07-28",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 109,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-28",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 73,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-28",
+      "landing_page": "/",
+      "sessions": 240,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-07-29",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 262,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-07-29",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 167,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-07-29",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 104,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-29",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 70,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-29",
+      "landing_page": "/",
+      "sessions": 244,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-07-30",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 247,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-07-30",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 158,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-07-30",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 99,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-30",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 66,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-07-30",
+      "landing_page": "/",
+      "sessions": 224,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-07-31",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 315,
+      "conversoes": 7
+    },
+    {
+      "date": "2026-07-31",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 199,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-07-31",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 124,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-07-31",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 83,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-07-31",
+      "landing_page": "/",
+      "sessions": 235,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-01",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 284,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-01",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 179,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-01",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 111,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-01",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 76,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-01",
+      "landing_page": "/",
+      "sessions": 214,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-02",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 268,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-02",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 169,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-02",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 105,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-02",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 70,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-02",
+      "landing_page": "/",
+      "sessions": 194,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-03",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 292,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-03",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 185,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-03",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 115,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-03",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 77,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-03",
+      "landing_page": "/",
+      "sessions": 227,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-04",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 296,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-04",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 188,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-04",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 117,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-04",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 79,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-04",
+      "landing_page": "/",
+      "sessions": 247,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-05",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 302,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-05",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 194,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-05",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 120,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-05",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 81,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-05",
+      "landing_page": "/",
+      "sessions": 229,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-06",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 292,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-06",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 188,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-06",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 116,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-06",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 78,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-06",
+      "landing_page": "/",
+      "sessions": 233,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-07",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 296,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-07",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 189,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-07",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 117,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-07",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 79,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-07",
+      "landing_page": "/",
+      "sessions": 245,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-08",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 263,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-08",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 167,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-08",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 104,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-08",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 70,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-08",
+      "landing_page": "/",
+      "sessions": 210,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-09",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 250,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-09",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 160,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-09",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 99,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-09",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 67,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-09",
+      "landing_page": "/",
+      "sessions": 191,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-10",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 280,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-10",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 179,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-10",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 111,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-10",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 75,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-10",
+      "landing_page": "/",
+      "sessions": 241,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-11",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 274,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-11",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 174,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-11",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 109,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-11",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 74,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-11",
+      "landing_page": "/",
+      "sessions": 251,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-12",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 277,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-12",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 176,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-12",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 111,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-12",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 76,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-12",
+      "landing_page": "/",
+      "sessions": 257,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-13",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 273,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-13",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 174,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-13",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 109,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-13",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 74,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-13",
+      "landing_page": "/",
+      "sessions": 259,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-14",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 287,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-14",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 182,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-14",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 114,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-14",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 78,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-14",
+      "landing_page": "/",
+      "sessions": 250,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-15",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 244,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-15",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 155,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-15",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 98,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-15",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 66,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-15",
+      "landing_page": "/",
+      "sessions": 236,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-16",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 234,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-16",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 148,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-16",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 92,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-16",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 64,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-16",
+      "landing_page": "/",
+      "sessions": 215,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-17",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 271,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-17",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 171,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-17",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 107,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-17",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 74,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-17",
+      "landing_page": "/",
+      "sessions": 266,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-18",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 275,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-18",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 172,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-18",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 108,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-18",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 75,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-18",
+      "landing_page": "/",
+      "sessions": 261,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-19",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 272,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-19",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 173,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-19",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 110,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-19",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 75,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-19",
+      "landing_page": "/",
+      "sessions": 257,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-20",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 268,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-20",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 170,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-20",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 107,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-20",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 72,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-20",
+      "landing_page": "/",
+      "sessions": 252,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-21",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 276,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-21",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 174,
+      "conversoes": 4
+    },
+    {
+      "date": "2026-08-21",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 110,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-21",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 76,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-21",
+      "landing_page": "/",
+      "sessions": 281,
+      "conversoes": 6
+    },
+    {
+      "date": "2026-08-22",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 238,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-22",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 149,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-22",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 94,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-22",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 64,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-22",
+      "landing_page": "/",
+      "sessions": 233,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-23",
+      "landing_page": "/omega-3-1000mg",
+      "sessions": 232,
+      "conversoes": 5
+    },
+    {
+      "date": "2026-08-23",
+      "landing_page": "/whey-protein-concentrado",
+      "sessions": 146,
+      "conversoes": 3
+    },
+    {
+      "date": "2026-08-23",
+      "landing_page": "/creatina-monohidratada",
+      "sessions": 93,
+      "conversoes": 2
+    },
+    {
+      "date": "2026-08-23",
+      "landing_page": "/multivitaminico-az",
+      "sessions": 63,
+      "conversoes": 1
+    },
+    {
+      "date": "2026-08-23",
+      "landing_page": "/",
+      "sessions": 229,
+      "conversoes": 5
+    }
+  ]
+}

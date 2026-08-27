@@ -1,0 +1,793 @@
+{
+  "_aviso": "DADOS FICTÍCIOS gerados para o desafio AdzHub.",
+  "periodo": {
+    "inicio": "2026-07-27",
+    "fim": "2026-08-23"
+  },
+  "ctas_fracos": [
+    "Saiba mais",
+    "Ver mais",
+    "Conheça"
+  ],
+  "criativos": [
+    {
+      "id": "23861004417",
+      "nome": "omega3_vid_prova_social_v2",
+      "campanha": "HW | Ômega 3 | Conversão | Ago",
+      "adset": "LAL 2% Compradores 180d | 25-54 | BR",
+      "produto": "Ômega 3",
+      "formato": "video",
+      "copy": {
+        "headline": "12 mil pessoas já trocaram o ômega 3 de farmácia pelo nosso",
+        "corpo": "1000mg por cápsula, com 660mg de EPA+DHA de verdade — não aquele rótulo que soma tudo e entrega pouco. Óleo purificado por destilação molecular, certificado IFOS, e sem o refluxo com gosto de peixe. Cada lote tem laudo aberto no site. Frete grátis acima de R$ 199."
+      },
+      "cta": "Comprar agora",
+      "status": "ativo",
+      "data_subida": "2026-07-31",
+      "autor": "Luiza Prado",
+      "link": "https://hwy.link/o3ps",
+      "link_original": "https://housewhey.com.br/omega-3-1000mg?utm_source=facebook&utm_medium=paid_social&utm_campaign=omega3_conversao_ago&utm_content=omega3_vid_prova_social_v2",
+      "utm_content": "",
+      "metricas": {
+        "spend": 2580,
+        "impressions": 94198,
+        "clicks": 2461,
+        "ctr": 2.61,
+        "cpc": 1.05,
+        "frequency_media": 2.09,
+        "conversions": 86,
+        "cpa": 30
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 330,
+          "ctr": 2.68,
+          "cpc": 1.01,
+          "frequency": 1.57,
+          "conversions": 11,
+          "cpa": 30
+        },
+        {
+          "semana": "S2",
+          "spend": 650,
+          "ctr": 2.68,
+          "cpc": 1.05,
+          "frequency": 1.89,
+          "conversions": 22,
+          "cpa": 29.55
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 700,
+          "ctr": 2.58,
+          "cpc": 1.05,
+          "frequency": 2.23,
+          "conversions": 23,
+          "cpa": 30.43
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 900,
+          "ctr": 2.56,
+          "cpc": 1.06,
+          "frequency": 2.36,
+          "conversions": 30,
+          "cpa": 30
+        }
+      ],
+      "observacao": "Link trocado por encurtador em 2026-08-11. O anúncio continua vendendo (o pixel registra), mas as UTMs não chegam mais ao CRM."
+    },
+    {
+      "id": "23861004418",
+      "nome": "omega3_vid_depoimento_dra_v3",
+      "campanha": "HW | Ômega 3 | Conversão | Ago",
+      "adset": "Interesses Saúde e Suplementação | 30-55 | BR",
+      "produto": "Ômega 3",
+      "formato": "video",
+      "copy": {
+        "headline": "A nutricionista explica por que a maioria dos ômegas 3 não funciona",
+        "corpo": "A conta que quase ninguém faz: 1000mg de óleo de peixe não é 1000mg de ômega 3. O que importa é o EPA + DHA. No nosso são 660mg por cápsula, com laudo de pureza por lote. Dose real, resultado real."
+      },
+      "cta": "Quero meu frasco",
+      "status": "ativo",
+      "data_subida": "2026-07-27",
+      "autor": "Luiza Prado",
+      "link": "https://housewhey.com.br/omega-3-1000mg?utm_source=facebook&utm_medium=paid_social&utm_campaign=omega3_conversao_ago&utm_content=omega3_vid_depoimento_dra_v3",
+      "utm_content": "omega3_vid_depoimento_dra_v3",
+      "metricas": {
+        "spend": 1900,
+        "impressions": 78654,
+        "clicks": 1662,
+        "ctr": 2.11,
+        "cpc": 1.14,
+        "frequency_media": 2.27,
+        "conversions": 50,
+        "cpa": 38
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 470,
+          "ctr": 2.17,
+          "cpc": 1.11,
+          "frequency": 1.91,
+          "conversions": 13,
+          "cpa": 36.15
+        },
+        {
+          "semana": "S2",
+          "spend": 470,
+          "ctr": 2.15,
+          "cpc": 1.13,
+          "frequency": 2.17,
+          "conversions": 13,
+          "cpa": 36.15
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 480,
+          "ctr": 2.07,
+          "cpc": 1.15,
+          "frequency": 2.39,
+          "conversions": 12,
+          "cpa": 40
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 480,
+          "ctr": 2.06,
+          "cpc": 1.18,
+          "frequency": 2.59,
+          "conversions": 12,
+          "cpa": 40
+        }
+      ]
+    },
+    {
+      "id": "23861004419",
+      "nome": "omega3_carrossel_beneficios_v1",
+      "campanha": "HW | Ômega 3 | Conversão | Ago",
+      "adset": "Interesses Saúde e Suplementação | 30-55 | BR",
+      "produto": "Ômega 3",
+      "formato": "carrossel",
+      "copy": {
+        "headline": "Conheça os benefícios do Ômega 3",
+        "corpo": "O ômega 3 auxilia na saúde do coração, do cérebro e das articulações, e faz parte de uma rotina equilibrada. Confira a linha completa Housewhey e escolha a sua."
+      },
+      "cta": "Saiba mais",
+      "status": "ativo",
+      "data_subida": "2026-07-27",
+      "autor": "Luiza Prado",
+      "link": "https://housewhey.com.br/omega-3-1000mg?utm_source=facebook&utm_medium=paid_social&utm_campaign=omega3_conversao_ago&utm_content=omega3_carrossel_beneficios_v1",
+      "utm_content": "omega3_carrossel_beneficios_v1",
+      "metricas": {
+        "spend": 2210,
+        "impressions": 152634,
+        "clicks": 1977,
+        "ctr": 1.3,
+        "cpc": 1.12,
+        "frequency_media": 3.83,
+        "conversions": 37,
+        "cpa": 59.73
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 640,
+          "ctr": 1.91,
+          "cpc": 0.92,
+          "frequency": 2.1,
+          "conversions": 15,
+          "cpa": 42.67
+        },
+        {
+          "semana": "S2",
+          "spend": 620,
+          "ctr": 1.52,
+          "cpc": 1.07,
+          "frequency": 3.26,
+          "conversions": 11,
+          "cpa": 56.36
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 570,
+          "ctr": 1.05,
+          "cpc": 1.28,
+          "frequency": 4.41,
+          "conversions": 7,
+          "cpa": 81.43
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 380,
+          "ctr": 0.72,
+          "cpc": 1.49,
+          "frequency": 5.56,
+          "conversions": 4,
+          "cpa": 95
+        }
+      ],
+      "observacao": "Frequência subiu de 2,1 para 5,6 e o CTR caiu de 1,92% para 0,71% em 4 semanas. CPA quase dobrou. Público esgotado — candidato legítimo a pausa."
+    },
+    {
+      "id": "23861004420",
+      "nome": "omega3_est_oferta_frete_v1",
+      "campanha": "HW | Ômega 3 | Conversão | Ago",
+      "adset": "Retargeting Visitantes 30d | BR",
+      "produto": "Ômega 3",
+      "formato": "estatico",
+      "copy": {
+        "headline": "3 potes de Ômega 3 por R$ 189 — frete grátis pro Brasil inteiro",
+        "corpo": "São 3 meses de tratamento pelo preço de menos de R$ 2,10 por dia. Estoque limitado do lote de agosto."
+      },
+      "cta": "Aproveitar oferta",
+      "status": "ativo",
+      "data_subida": "2026-07-27",
+      "autor": "Luiza Prado",
+      "link": "https://housewhey.com.br/omega-3-1000mg?utm_source=facebook&utm_medium=paid_social&utm_campaign=omega3_conversao_ago&utm_content=omega3_est_oferta_frete_v1",
+      "utm_content": "omega3_est_oferta_frete_v1",
+      "metricas": {
+        "spend": 760,
+        "impressions": 34073,
+        "clicks": 585,
+        "ctr": 1.72,
+        "cpc": 1.3,
+        "frequency_media": 2.43,
+        "conversions": 21,
+        "cpa": 36.19
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 190,
+          "ctr": 1.74,
+          "cpc": 1.28,
+          "frequency": 2.1,
+          "conversions": 6,
+          "cpa": 31.67
+        },
+        {
+          "semana": "S2",
+          "spend": 190,
+          "ctr": 1.75,
+          "cpc": 1.27,
+          "frequency": 2.33,
+          "conversions": 5,
+          "cpa": 38
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 190,
+          "ctr": 1.69,
+          "cpc": 1.33,
+          "frequency": 2.53,
+          "conversions": 5,
+          "cpa": 38
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 190,
+          "ctr": 1.69,
+          "cpc": 1.32,
+          "frequency": 2.75,
+          "conversions": 5,
+          "cpa": 38
+        }
+      ]
+    },
+    {
+      "id": "23861004431",
+      "nome": "whey_vid_receita_shake_v2",
+      "campanha": "HW | Whey Protein | Conversão | Ago",
+      "adset": "LAL 3% Compradores | 18-40 | BR",
+      "produto": "Whey Protein",
+      "formato": "video",
+      "copy": {
+        "headline": "Shake de whey com banana em 40 segundos",
+        "corpo": "Uma dose, 200ml de leite, meia banana e gelo. 24g de proteína por dose, 8 sabores, e sem aquele gosto artificial que sobra na boca."
+      },
+      "cta": "Ver sabores",
+      "status": "ativo",
+      "data_subida": "2026-07-27",
+      "autor": "Luiza Prado",
+      "link": "https://housewhey.com.br/whey-protein-concentrado?utm_source=facebook&utm_medium=paid_social&utm_campaign=whey_conversao_ago&utm_content=whey_vid_receita_shake_v2",
+      "utm_content": "whey_vid_receita_shake_v2",
+      "metricas": {
+        "spend": 1800,
+        "impressions": 79453,
+        "clicks": 1499,
+        "ctr": 1.89,
+        "cpc": 1.2,
+        "frequency_media": 1.96,
+        "conversions": 40,
+        "cpa": 45
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 450,
+          "ctr": 1.97,
+          "cpc": 1.18,
+          "frequency": 1.71,
+          "conversions": 11,
+          "cpa": 40.91
+        },
+        {
+          "semana": "S2",
+          "spend": 450,
+          "ctr": 1.94,
+          "cpc": 1.2,
+          "frequency": 1.87,
+          "conversions": 10,
+          "cpa": 45
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 450,
+          "ctr": 1.87,
+          "cpc": 1.19,
+          "frequency": 2.1,
+          "conversions": 10,
+          "cpa": 45
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 450,
+          "ctr": 1.77,
+          "cpc": 1.24,
+          "frequency": 2.18,
+          "conversions": 9,
+          "cpa": 50
+        }
+      ]
+    },
+    {
+      "id": "23861004432",
+      "nome": "whey_carrossel_sabores_v3",
+      "campanha": "HW | Whey Protein | Conversão | Ago",
+      "adset": "Interesses Fitness | 18-40 | BR",
+      "produto": "Whey Protein",
+      "formato": "carrossel",
+      "copy": {
+        "headline": "8 sabores. Zero desculpa pra pular a dose.",
+        "corpo": "Do baunilha clássico ao doce de leite. Todos com 24g de proteína por dose e rótulo auditado. Escolha o seu e monte o kit."
+      },
+      "cta": "Comprar agora",
+      "status": "ativo",
+      "data_subida": "2026-07-27",
+      "autor": "Luiza Prado",
+      "link": "https://housewhey.com.br/whey-protein-concentrado?utm_source=facebook&utm_medium=paid_social&utm_campaign=whey_conversao_ago&utm_content=whey_carrossel_sabores_v3",
+      "utm_content": "whey_carrossel_sabores_v3",
+      "metricas": {
+        "spend": 1120,
+        "impressions": 58151,
+        "clicks": 839,
+        "ctr": 1.44,
+        "cpc": 1.33,
+        "frequency_media": 2.49,
+        "conversions": 20,
+        "cpa": 56
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 280,
+          "ctr": 1.5,
+          "cpc": 1.31,
+          "frequency": 2.18,
+          "conversions": 6,
+          "cpa": 46.67
+        },
+        {
+          "semana": "S2",
+          "spend": 280,
+          "ctr": 1.45,
+          "cpc": 1.31,
+          "frequency": 2.42,
+          "conversions": 5,
+          "cpa": 56
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 280,
+          "ctr": 1.43,
+          "cpc": 1.35,
+          "frequency": 2.58,
+          "conversions": 5,
+          "cpa": 56
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 280,
+          "ctr": 1.4,
+          "cpc": 1.37,
+          "frequency": 2.78,
+          "conversions": 4,
+          "cpa": 70
+        }
+      ]
+    },
+    {
+      "id": "23861004433",
+      "nome": "whey_est_combo_v1",
+      "campanha": "HW | Whey Protein | Conversão | Ago",
+      "adset": "Interesses Fitness | 18-40 | BR",
+      "produto": "Whey Protein",
+      "formato": "estatico",
+      "copy": {
+        "headline": "Combo Whey + Coqueteleira",
+        "corpo": "Leve o pote de 900g e ganhe a coqueteleira Housewhey. Confira as condições no site."
+      },
+      "cta": "Saiba mais",
+      "status": "ativo",
+      "data_subida": "2026-07-27",
+      "autor": "Luiza Prado",
+      "link": "https://housewhey.com.br/whey-protein-concentrado?utm_source=facebook&utm_medium=paid_social&utm_campaign=whey_conversao_ago&utm_content=whey_est_combo_v1",
+      "utm_content": "whey_est_combo_v1",
+      "metricas": {
+        "spend": 680,
+        "impressions": 65815,
+        "clicks": 438,
+        "ctr": 0.67,
+        "cpc": 1.55,
+        "frequency_media": 2.88,
+        "conversions": 5,
+        "cpa": 136
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 170,
+          "ctr": 0.68,
+          "cpc": 1.5,
+          "frequency": 2.57,
+          "conversions": 2,
+          "cpa": 85
+        },
+        {
+          "semana": "S2",
+          "spend": 170,
+          "ctr": 0.67,
+          "cpc": 1.55,
+          "frequency": 2.84,
+          "conversions": 1,
+          "cpa": 170
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 170,
+          "ctr": 0.67,
+          "cpc": 1.55,
+          "frequency": 3.01,
+          "conversions": 1,
+          "cpa": 170
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 170,
+          "ctr": 0.64,
+          "cpc": 1.62,
+          "frequency": 3.12,
+          "conversions": 1,
+          "cpa": 170
+        }
+      ],
+      "observacao": "CTA genérico e copy sem oferta concreta. CTR abaixo de 1%."
+    },
+    {
+      "id": "23861004441",
+      "nome": "creatina_vid_treino_v1",
+      "campanha": "HW | Creatina | Conversão | Ago",
+      "adset": "Interesses Musculação | 18-45 | BR",
+      "produto": "Creatina",
+      "formato": "video",
+      "copy": {
+        "headline": "3g por dia. Todo dia. É literalmente isso.",
+        "corpo": "Creatina monohidratada Creapure®, sem sabor, sem ciclo, sem fase de saturação obrigatória. O suplemento mais estudado do mundo não precisa de marketing — precisa de constância."
+      },
+      "cta": "Quero minha creatina",
+      "status": "ativo",
+      "data_subida": "2026-07-27",
+      "autor": "Luiza Prado",
+      "link": "https://housewhey.com.br/creatina-monohidratada?utm_source=facebook&utm_medium=paid_social&utm_campaign=creatina_conversao_ago&utm_content=creatina_vid_treino_v1",
+      "utm_content": "creatina_vid_treino_v1",
+      "metricas": {
+        "spend": 1400,
+        "impressions": 67426,
+        "clicks": 1208,
+        "ctr": 1.79,
+        "cpc": 1.16,
+        "frequency_media": 1.74,
+        "conversions": 29,
+        "cpa": 48.28
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 350,
+          "ctr": 1.86,
+          "cpc": 1.13,
+          "frequency": 1.59,
+          "conversions": 7,
+          "cpa": 50
+        },
+        {
+          "semana": "S2",
+          "spend": 350,
+          "ctr": 1.79,
+          "cpc": 1.15,
+          "frequency": 1.66,
+          "conversions": 8,
+          "cpa": 43.75
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 350,
+          "ctr": 1.76,
+          "cpc": 1.18,
+          "frequency": 1.8,
+          "conversions": 7,
+          "cpa": 50
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 350,
+          "ctr": 1.76,
+          "cpc": 1.18,
+          "frequency": 1.89,
+          "conversions": 7,
+          "cpa": 50
+        }
+      ]
+    },
+    {
+      "id": "23861004442",
+      "nome": "creatina_est_pote_v2",
+      "campanha": "HW | Creatina | Conversão | Ago",
+      "adset": "Interesses Musculação | 18-45 | BR",
+      "produto": "Creatina",
+      "formato": "estatico",
+      "copy": {
+        "headline": "Creatina monohidratada 300g",
+        "corpo": "Pote de 300g, 100 doses. Confira no site."
+      },
+      "cta": "Ver mais",
+      "status": "ativo",
+      "data_subida": "2026-07-27",
+      "autor": "Luiza Prado",
+      "link": "https://housewhey.com.br/creatina-monohidratada?utm_source=facebook&utm_medium=paid_social&utm_campaign=creatina_conversao_ago&utm_content=creatina_est_pote_v2",
+      "utm_content": "creatina_est_pote_v2",
+      "metricas": {
+        "spend": 800,
+        "impressions": 68951,
+        "clicks": 570,
+        "ctr": 0.83,
+        "cpc": 1.4,
+        "frequency_media": 2.73,
+        "conversions": 12,
+        "cpa": 66.67
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 200,
+          "ctr": 0.86,
+          "cpc": 1.38,
+          "frequency": 2.49,
+          "conversions": 3,
+          "cpa": 66.67
+        },
+        {
+          "semana": "S2",
+          "spend": 200,
+          "ctr": 0.82,
+          "cpc": 1.39,
+          "frequency": 2.73,
+          "conversions": 3,
+          "cpa": 66.67
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 200,
+          "ctr": 0.81,
+          "cpc": 1.43,
+          "frequency": 2.84,
+          "conversions": 3,
+          "cpa": 66.67
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 200,
+          "ctr": 0.82,
+          "cpc": 1.42,
+          "frequency": 2.85,
+          "conversions": 3,
+          "cpa": 66.67
+        }
+      ],
+      "observacao": "CTA genérico e copy sem oferta concreta. CTR abaixo de 1%."
+    },
+    {
+      "id": "23861004451",
+      "nome": "multi_est_remarketing_v1",
+      "campanha": "HW | Multivitamínico | Remarketing | Ago",
+      "adset": "Carrinho abandonado 14d | BR",
+      "produto": "Multivitamínico",
+      "formato": "estatico",
+      "copy": {
+        "headline": "Você deixou o multivitamínico no carrinho",
+        "corpo": "Ainda dá tempo: finalize em até 24h e o frete continua por nossa conta."
+      },
+      "cta": "Finalizar compra",
+      "status": "ativo",
+      "data_subida": "2026-07-27",
+      "autor": "Luiza Prado",
+      "link": "https://housewhey.com.br/multivitaminico-az?utm_source=facebook&utm_medium=paid_social&utm_campaign=multi_remarketing_ago&utm_content=multi_est_remarketing_v1",
+      "utm_content": "multi_est_remarketing_v1",
+      "metricas": {
+        "spend": 880,
+        "impressions": 33376,
+        "clicks": 1139,
+        "ctr": 3.41,
+        "cpc": 0.77,
+        "frequency_media": 4.57,
+        "conversions": 29,
+        "cpa": 30.34
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 220,
+          "ctr": 3.41,
+          "cpc": 0.75,
+          "frequency": 4.2,
+          "conversions": 7,
+          "cpa": 31.43
+        },
+        {
+          "semana": "S2",
+          "spend": 220,
+          "ctr": 3.43,
+          "cpc": 0.77,
+          "frequency": 4.44,
+          "conversions": 7,
+          "cpa": 31.43
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 220,
+          "ctr": 3.45,
+          "cpc": 0.79,
+          "frequency": 4.76,
+          "conversions": 8,
+          "cpa": 27.5
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 220,
+          "ctr": 3.36,
+          "cpc": 0.78,
+          "frequency": 4.89,
+          "conversions": 7,
+          "cpa": 31.43
+        }
+      ]
+    },
+    {
+      "id": "23861004452",
+      "nome": "multi_carrossel_kit_v1",
+      "campanha": "HW | Multivitamínico | Remarketing | Ago",
+      "adset": "Compradores 90d | BR",
+      "produto": "Multivitamínico",
+      "formato": "carrossel",
+      "copy": {
+        "headline": "Monte seu kit e economize 18%",
+        "corpo": "Escolha 3 itens da linha Housewhey e o desconto entra sozinho no carrinho. Sem cupom, sem pegadinha."
+      },
+      "cta": "Montar meu kit",
+      "status": "ativo",
+      "data_subida": "2026-07-27",
+      "autor": "Luiza Prado",
+      "link": "https://housewhey.com.br/multivitaminico-az?utm_source=facebook&utm_medium=paid_social&utm_campaign=multi_remarketing_ago&utm_content=multi_carrossel_kit_v1",
+      "utm_content": "multi_carrossel_kit_v1",
+      "metricas": {
+        "spend": 520,
+        "impressions": 24676,
+        "clicks": 548,
+        "ctr": 2.22,
+        "cpc": 0.95,
+        "frequency_media": 3.41,
+        "conversions": 12,
+        "cpa": 43.33
+      },
+      "metricas_por_semana": [
+        {
+          "semana": "S1",
+          "spend": 130,
+          "ctr": 2.3,
+          "cpc": 0.92,
+          "frequency": 3.17,
+          "conversions": 3,
+          "cpa": 43.33
+        },
+        {
+          "semana": "S2",
+          "spend": 130,
+          "ctr": 2.24,
+          "cpc": 0.95,
+          "frequency": 3.38,
+          "conversions": 3,
+          "cpa": 43.33
+        },
+        {
+          "semana": "S3 (semana anterior)",
+          "spend": 130,
+          "ctr": 2.2,
+          "cpc": 0.94,
+          "frequency": 3.5,
+          "conversions": 3,
+          "cpa": 43.33
+        },
+        {
+          "semana": "S4 (semana atual)",
+          "spend": 130,
+          "ctr": 2.15,
+          "cpc": 0.99,
+          "frequency": 3.6,
+          "conversions": 3,
+          "cpa": 43.33
+        }
+      ]
+    },
+    {
+      "id": "rascunho_1",
+      "nome": "omega3_vid_ugc_rotina_v1",
+      "campanha": "HW | Ômega 3 | Conversão | Ago",
+      "produto": "Ômega 3",
+      "formato": "video",
+      "copy": {
+        "headline": "Minha rotina de suplementação leva 40 segundos (e três potes)",
+        "corpo": "Vídeo UGC, gravado no celular, sem trilha: a cliente mostra os potes na bancada da cozinha e conta o que mudou nos exames em 4 meses. Sem promessa de cura, sem antes e depois de corpo — só a rotina e o laudo do lote na tela."
+      },
+      "cta": "Comprar agora",
+      "status": "em_aprovacao",
+      "data_subida": null,
+      "autor": "Luiza Prado",
+      "link": null,
+      "utm_content": "omega3_vid_ugc_rotina_v1",
+      "metricas": null,
+      "metricas_por_semana": [],
+      "aprovacao": {
+        "enviado_em": "2026-08-20",
+        "aguarda": "Rafael Menezes (Housewhey)",
+        "dias_parado": 6
+      }
+    },
+    {
+      "id": "rascunho_2",
+      "nome": "whey_est_combo_setembro_v1",
+      "campanha": "HW | Whey Protein | Conversão | Ago",
+      "produto": "Whey Protein",
+      "formato": "estatico",
+      "copy": {
+        "headline": "Combo de setembro: Whey 900g + Creatina 300g por R$ 289",
+        "corpo": "O par que a maioria dos nossos clientes já compra junto, agora com R$ 118 de desconto. Válido de 01 a 15 de setembro ou enquanto durar o lote."
+      },
+      "cta": "Quero o combo",
+      "status": "em_aprovacao",
+      "data_subida": null,
+      "autor": "Luiza Prado",
+      "link": null,
+      "utm_content": "whey_est_combo_setembro_v1",
+      "metricas": null,
+      "metricas_por_semana": [],
+      "aprovacao": {
+        "enviado_em": "2026-08-21",
+        "aguarda": "Rafael Menezes (Housewhey)",
+        "dias_parado": 5
+      }
+    }
+  ]
+}
