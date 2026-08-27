@@ -240,6 +240,24 @@ export function clearCheckpoint(sessionId: Id): void {
   checkpoints.delete(sessionId);
 }
 
+/**
+ * Decisões de gate já aplicadas. Existe por causa da reconstrução determinística do
+ * checkpoint em serverless: como o replay regenera a mesma proposta, sem esta marca a
+ * pendência já consumida ressuscitaria e a ação rodaria de novo a cada reenvio.
+ *
+ * ponytail: mesma memória de processo do checkpoint — protege o reenvio que cai na
+ * mesma instância, não o que cai noutra. Idempotência de verdade exige store externo.
+ */
+/** Chave: `${sessionId}:${pendingActionId}` — o id da proposta se repete entre sessões. */
+const decisoesAplicadas = new Set<string>();
+
+export function marcarDecisaoAplicada(marca: string): void {
+  decisoesAplicadas.add(marca);
+}
+export function decisaoJaAplicada(marca: string): boolean {
+  return decisoesAplicadas.has(marca);
+}
+
 /** Resultado devolvido por um nó ao executor do grafo. */
 export interface NodeResult {
   readonly estado: HarnessState;

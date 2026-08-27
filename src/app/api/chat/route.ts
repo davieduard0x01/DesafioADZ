@@ -9,6 +9,7 @@
  * requisição e nunca é gravada, logada ou ecoada — nem em mensagem de erro.
  */
 import { resumeTurn, runTurn } from '@/harness/graph';
+import { decisaoJaAplicada, marcarDecisaoAplicada } from '@/harness/state';
 import { createOpenRouterClient, type LlmPort } from '@/harness/llm';
 import { runReplayTurn, resumeReplayTurn } from '@/harness/replay';
 import { OPENROUTER_KEY_HEADER, type ChatErrorBody, type ChatRequest, type StreamFrame } from '@/harness/types';
@@ -68,6 +69,17 @@ export async function POST(req: Request): Promise<Response> {
   // --- retomada pós-gate: só `sessionId` + decisão ---------------------------
   if (body.decision) {
     const decisao = body.decision;
+    // Reenvio da mesma decisão não executa de novo. A checagem vem ANTES da reconstrução
+    // porque é justamente ela que ressuscitaria a pendência já consumida.
+    const marcaDecisao = `${sessionId}:${decisao.pendingActionId}`;
+    if (decisaoJaAplicada(marcaDecisao)) {
+      return stream(async (enviar) => {
+        enviar({
+          type: 'fatal',
+          message: 'Esta decisão já foi aplicada neste turno. Nada foi executado de novo.',
+        });
+      });
+    }
     return stream(async (enviar) => {
       let retomado = replay
         ? await resumeReplayTurn({ sessionId, decision: decisao, onFrame: enviar })
@@ -81,7 +93,9 @@ export async function POST(req: Request): Promise<Response> {
         await runReplayTurn({ sessionId, texto: String(body.message) });
         retomado = await resumeReplayTurn({ sessionId, decision: decisao, onFrame: enviar });
       }
-      if (!retomado) {
+      if (retomado) {
+        marcarDecisaoAplicada(marcaDecisao);
+      } else {
         enviar({ type: 'fatal', message: 'Não encontrei um turno aguardando confirmação nesta sessão. Refaça o pedido e eu monto a proposta de novo.' });
       }
     });
