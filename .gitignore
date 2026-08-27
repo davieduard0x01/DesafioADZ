@@ -46,3 +46,4 @@ node_modules/
 paper/*.aux
 paper/*.log
 paper/*.out
+.vercel
