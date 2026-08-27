@@ -6,13 +6,25 @@
 > Harness Agêntico da AdzHub e gerados por script (`generate.mjs`).
 > Nenhum dado pessoal real, nenhum acesso a API de produção, nenhuma marca real envolvida.
 >
-> **Sobre o contrato de dados:** o `dataset_prompt.md` oficial da AdzHub, citado no guia do
-> desafio, **não estava mais acessível na página** — o link retorna o shell HTML da SPA e a
-> página atual não referencia o arquivo. O contrato seguido aqui é o descrito no próprio
-> guia do desafio (`docs/adzhub/guia-do-desafio.md`, seções de arquitetura de referência e
-> tarefas típicas): supercérebro (grafo + linha do tempo), APIs (Meta / Google / GA / CRM) e
-> os campos citados explicitamente no texto, sobretudo o `utm_content` como chave de
-> cruzamento entre mídia e CRM.
+> **Sobre o contrato de dados:** este dataset foi gerado **antes** de o `dataset_prompt.md`
+> oficial estar em mãos — na ocasião o link retornava o shell HTML da SPA. O contrato usado
+> foi o descrito no próprio guia do desafio. O arquivo oficial foi obtido depois e está em
+> `docs/adzhub/dataset_prompt.md`; o dataset foi **conferido contra ele**. Divergências
+> registradas, todas de nomenclatura:
+>
+> - **Nomes de arquivo.** Aqui: `supercerebro.json`, `timeline.json`, `meta_ads.json`,
+>   `crm.json`, `criativos.json`, `ga.json`, `google_ads.json`. O contrato sugere
+>   `supercerebro_graph.json`, `supercerebro_timeline.json`, `api_meta_ads.json`,
+>   `api_crm_leads.json`, `app_analise_criativos.json`, `app_mapa_solucao.json`, `conversas.json`.
+> - **Nomes de tool.** Aqui: `graph_query`, `timeline_query`, `crm_leads`. O contrato sugere
+>   `search_client_context`, `get_timeline`, `get_leads`. A malha de dados é a mesma.
+> - **Lacuna real.** O contrato pede um `app_mapa_solucao` (ficha de marca: oferta, promessa,
+>   prova, objeções, tom de voz) e um `conversas.json` separado. Não existem como arquivos
+>   próprios; os trechos de conversa vivem dentro de `timeline.json`.
+>
+> **Regra 2 do contrato** ("não escreva a resposta no campo `notes`; deixe o harness
+> descobrir") está cumprida. Havia em `ga.json` uma nota que descrevia a causa-raiz; ela foi
+> removida. Nenhuma tool devolvia esse campo ao modelo — verificado no stream da rota.
 
 ---
 
