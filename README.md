@@ -5,8 +5,8 @@ Desafio técnico AdzHub · Núcleo Fundacional · 2026.
 **Tese:** harness híbrido — grafo de estados como espinha dorsal, loops ReAct dentro dos nós, camada de permissões deny-first, supercérebro como contexto de primeira classe.
 
 - Paper: `paper/main.pdf`
-- Demo: _(a definir no F5)_
-- Plano de execução: `PLAN.md`
+- Demo: **https://desafio-adz-harness.vercel.app** (sem login; sem chave roda replay determinístico)
+- Plano de execução: `PLAN.md` · Checklist: `docs/CHECKLIST.md`
 
 ## Rodar local
 
