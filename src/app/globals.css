@@ -1,34 +1,59 @@
 @import "tailwindcss";
 
+/*
+ * Linguagem visual do blueprint da própria AdzHub (docs/adzhub/referencia).
+ * Tema claro: fundo lavanda muito clara, cartões brancos, 1px cinza, acento índigo.
+ *
+ * Regra de contraste: texto secundário e terciário têm token PRÓPRIO.
+ * Nunca `text-cor/70` — alfa sobre token quebra AA em fundo claro.
+ */
 @theme {
-  /* superfícies — escuro por padrão, contraste por elevação e não por cor */
-  --color-bg: #0a0b0d;
-  --color-surface: #101216;
-  --color-surface-2: #15171c;
-  --color-surface-3: #1b1e24;
-  --color-line: #23262d;
-  --color-line-strong: #333741;
+  /* superfícies */
+  --color-bg: #f5f6fb;         /* página — lavanda muito clara */
+  --color-surface: #ffffff;    /* cartão */
+  --color-surface-2: #fafbff;  /* sub-bloco dentro do cartão */
+  --color-surface-3: #f1f2f7;  /* chip neutro, cabeçalho de tabela */
+  --color-line: #e5e7eb;
+  --color-line-strong: #d4d8e2;
 
-  /* texto */
-  --color-ink: #e7e9ee;
-  --color-muted: #99a0ad;
-  --color-faint: #6b7280;
+  /* texto — três níveis, todos AA sobre --color-surface e --color-bg */
+  --color-ink: #111827;        /* 16,1:1 */
+  --color-muted: #4b5563;      /*  7,0:1 */
+  --color-faint: #6b7280;      /*  4,8:1 — piso do AA para texto normal */
 
-  /* única cor de destaque */
-  --color-accent: #6e7bff;
-  --color-accent-soft: #1d2140;
+  /* acento índigo/violeta */
+  --color-accent: #4f46e5;     /* 6,3:1 sobre branco */
+  --color-accent-ink: #3730a3;
+  --color-accent-soft: #eef0fe;
+  --color-accent-line: #c7ccfb;
 
-  /* estados semânticos (badges e efeito de tool) */
-  --color-ok: #3fb27f;
-  --color-warn: #d3a04a;
-  --color-crit: #e0555a;
+  /* estados semânticos: texto saturado sobre fundo pálido */
+  --color-ok: #15803d;
+  --color-ok-soft: #dcfce7;
+  --color-ok-line: #a7e8bf;
+
+  --color-warn: #b45309;
+  --color-warn-soft: #fef3c7;
+  --color-warn-line: #f0c674;
+
+  --color-crit: #b91c1c;
+  --color-crit-soft: #fee2e2;
+  --color-crit-line: #f3b0b0;
+
+  --color-info: #1d4ed8;
+  --color-info-soft: #eaf1ff;
+  --color-info-line: #bcd2fb;
+
+  /* botão de envio — laranja do blueprint (3,6:1 com o ícone branco, AA gráfico) */
+  --color-send: #ea580c;
+  --color-send-hover: #c2410c;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -40,12 +65,12 @@ body {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #2c3038 transparent;
+  scrollbar-color: #cdd2dd transparent;
 }
 
 ::selection {
   background: var(--color-accent-soft);
-  color: var(--color-ink);
+  color: var(--color-accent-ink);
 }
 
 /* destaque temporário quando um artefato aponta para a evidência no trace */

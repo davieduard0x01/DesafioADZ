@@ -72,10 +72,11 @@ export function KeyField({ apiKey, onApiKey, model, onModel }: Props) {
   const aoVivo = apiKey.trim().length > 0;
 
   return (
-    <section className="border-b border-line bg-surface">
+    <section className="border-b border-line bg-surface-2">
+      {/* rótulo permanente do modo — sem chave, o avaliador precisa saber que é replay */}
       <div
-        className={`flex items-center gap-2 px-4 py-1.5 font-mono text-[11px] uppercase tracking-wider ${
-          aoVivo ? 'bg-accent-soft text-accent' : 'bg-warn/[0.1] text-warn'
+        className={`flex items-center gap-2 border-b px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] ${
+          aoVivo ? 'border-accent-line bg-accent-soft text-accent-ink' : 'border-warn-line bg-warn-soft text-warn'
         }`}
       >
         <span aria-hidden className={`h-1.5 w-1.5 rounded-full ${aoVivo ? 'bg-accent' : 'bg-warn'}`} />
@@ -86,11 +87,11 @@ export function KeyField({ apiKey, onApiKey, model, onModel }: Props) {
         )}
       </div>
 
-      <div className="flex flex-wrap items-center gap-2 px-4 py-2.5">
-        <label htmlFor="openrouter-key" className="font-mono text-[11px] text-muted">
+      <div className="flex flex-wrap items-center gap-2 px-5 py-2.5">
+        <label htmlFor="openrouter-key" className="text-[11px] font-medium text-muted">
           chave OpenRouter
         </label>
-        <div className="flex min-w-[220px] flex-1 items-center rounded border border-line-strong bg-bg focus-within:border-accent">
+        <div className="flex min-w-[220px] flex-1 items-center rounded-lg border border-line-strong bg-surface focus-within:border-accent">
           <input
             id="openrouter-key"
             type={visivel ? 'text' : 'password'}
@@ -104,7 +105,7 @@ export function KeyField({ apiKey, onApiKey, model, onModel }: Props) {
           <button
             type="button"
             onClick={() => setVisivel((v) => !v)}
-            className="px-2 py-1.5 font-mono text-[10px] uppercase tracking-wider text-faint hover:text-ink"
+            className="px-2 py-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-faint hover:text-ink"
           >
             {visivel ? 'ocultar' : 'mostrar'}
           </button>
@@ -112,21 +113,21 @@ export function KeyField({ apiKey, onApiKey, model, onModel }: Props) {
             <button
               type="button"
               onClick={() => onApiKey('')}
-              className="border-l border-line-strong px-2 py-1.5 font-mono text-[10px] uppercase tracking-wider text-faint hover:text-crit"
+              className="border-l border-line px-2 py-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-faint hover:text-crit"
             >
               limpar
             </button>
           )}
         </div>
 
-        <label htmlFor="modelo" className="font-mono text-[11px] text-muted">
+        <label htmlFor="modelo" className="text-[11px] font-medium text-muted">
           modelo
         </label>
         <select
           id="modelo"
           value={outro ? '__outro' : model}
           onChange={(e) => onModel(e.target.value === '__outro' ? '' : e.target.value)}
-          className="rounded border border-line-strong bg-bg px-2 py-1.5 font-mono text-[12px] text-ink outline-none focus:border-accent"
+          className="rounded-lg border border-line-strong bg-surface px-2 py-1.5 font-mono text-[12px] text-ink outline-none focus:border-accent"
         >
           {MODELOS.map((m) => (
             <option key={m} value={m}>
@@ -142,12 +143,12 @@ export function KeyField({ apiKey, onApiKey, model, onModel }: Props) {
             onChange={(e) => onModel(e.target.value)}
             placeholder="provedor/modelo"
             spellCheck={false}
-            className="w-48 rounded border border-line-strong bg-bg px-2 py-1.5 font-mono text-[12px] text-ink outline-none focus:border-accent placeholder:text-faint"
+            className="w-48 rounded-lg border border-line-strong bg-surface px-2 py-1.5 font-mono text-[12px] text-ink outline-none focus:border-accent placeholder:text-faint"
           />
         )}
       </div>
 
-      <p className="px-4 pb-2.5 text-[11px] leading-relaxed text-faint">
+      <p className="px-5 pb-3 text-[11px] leading-relaxed text-muted">
         A chave fica apenas nesta aba do navegador (<span className="font-mono">sessionStorage</span>, apagada ao
         fechar) e viaja só no header <span className="font-mono">{OPENROUTER_KEY_HEADER}</span> de cada chamada a{' '}
         <span className="font-mono">/api/chat</span>. Não é lida de variável de ambiente, não é persistida no servidor

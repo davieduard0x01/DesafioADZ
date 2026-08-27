@@ -53,16 +53,17 @@ const dataHora = new Intl.DateTimeFormat('pt-BR', {
   minute: '2-digit',
 });
 
+/** Badges pill do blueprint: fundo pálido + texto saturado, sem alfa sobre token. */
 const TOM: Record<BadgeTone, string> = {
-  neutro: 'border-line-strong text-muted',
-  ok: 'border-ok/50 text-ok',
-  atencao: 'border-warn/50 text-warn',
-  critico: 'border-crit/50 text-crit',
+  neutro: 'bg-info-soft text-info',
+  ok: 'bg-ok-soft text-ok',
+  atencao: 'bg-warn-soft text-warn',
+  critico: 'bg-crit-soft text-crit',
 };
 
 const STATUS_TOM: Record<CreativeStatus, BadgeTone> = {
   ativo: 'ok',
-  pausado: 'critico',
+  pausado: 'atencao',
   em_aprovacao: 'atencao',
   proposto: 'neutro',
   reprovado: 'critico',
@@ -86,7 +87,26 @@ const KIND_LABEL: Record<StageArtifact['kind'], string> = {
 
 function Badge({ label, tone }: { label: string; tone: BadgeTone }) {
   return (
-    <span className={`rounded border px-1.5 py-0.5 font-mono text-[10px] leading-none ${TOM[tone]}`}>{label}</span>
+    <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold leading-4 ${TOM[tone]}`}>{label}</span>
+  );
+}
+
+/** Pill de status no canto do cartão, com o ícone de pausa do blueprint. */
+function PillStatus({ status }: { status: CreativeStatus }) {
+  return (
+    <span
+      className={`flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold leading-4 ${
+        TOM[STATUS_TOM[status]]
+      }`}
+    >
+      {status === 'pausado' && (
+        <svg aria-hidden viewBox="0 0 12 12" className="h-2.5 w-2.5" fill="currentColor">
+          <rect x="2.5" y="2" width="2.6" height="8" rx="0.6" />
+          <rect x="6.9" y="2" width="2.6" height="8" rx="0.6" />
+        </svg>
+      )}
+      {STATUS_LABEL[status]}
+    </span>
   );
 }
 
@@ -106,14 +126,14 @@ function TabelaMetricas({ a }: { a: MetricsTableArtifact }) {
       <div className="overflow-x-auto">
         <table className="w-full border-collapse text-[13px]">
           <thead>
-            <tr className="border-b border-line-strong">
+            <tr className="border-b border-line-strong bg-surface-3">
               {a.columns.map((c) => (
                 <th
                   key={c.key}
                   scope="col"
-                  className={`whitespace-nowrap px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-wider ${
+                  className={`whitespace-nowrap px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] ${
                     c.align === 'right' ? 'text-right' : 'text-left'
-                  } ${c.highlight ? 'text-ink' : 'text-faint'}`}
+                  } ${c.highlight ? 'text-accent-ink' : 'text-faint'}`}
                 >
                   {c.label}
                 </th>
@@ -124,7 +144,7 @@ function TabelaMetricas({ a }: { a: MetricsTableArtifact }) {
             {a.rows.map((linha, i) => (
               <tr
                 key={i}
-                className={`border-b border-line last:border-0 ${marcadas.has(i) ? 'bg-warn/[0.06]' : ''}`}
+                className={`border-b border-line last:border-0 ${marcadas.has(i) ? 'bg-warn-soft' : ''}`}
               >
                 {a.columns.map((c) => (
                   <td
@@ -142,15 +162,16 @@ function TabelaMetricas({ a }: { a: MetricsTableArtifact }) {
         </table>
       </div>
       {a.flaggedRows && a.flaggedRows.length > 0 && (
-        <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-warn">
+        <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-warn">
           {a.flaggedRows.length} linhas marcadas pela análise
         </p>
       )}
+      {/* o footnote declara o que a tabela NÃO cobre — é o argumento de honestidade do paper */}
       {a.footnote && (
-        <p className="mt-3 border-t border-dashed border-line-strong pt-2 text-[12px] leading-relaxed text-muted">
-          <span className="font-mono text-[10px] uppercase tracking-wider text-faint">o que ficou de fora · </span>
-          {a.footnote}
-        </p>
+        <div className="mt-3 rounded-[10px] border border-warn-line bg-warn-soft px-3 py-2">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-warn">o que ficou de fora</p>
+          <p className="mt-1 text-[12px] leading-relaxed text-ink">{a.footnote}</p>
+        </div>
       )}
     </>
   );
@@ -160,14 +181,21 @@ function ListaCriativos({ a }: { a: CreativeListArtifact }) {
   return (
     <ul className="space-y-2">
       {a.items.map((c) => (
-        <li key={c.id} className="rounded border border-line bg-surface-2 p-3">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-[13px] font-medium text-ink">{c.nome}</span>
-            <Badge label={STATUS_LABEL[c.status]} tone={STATUS_TOM[c.status]} />
+        <li
+          key={c.id}
+          className={`rounded-[10px] border p-3 ${
+            c.status === 'pausado' ? 'border-warn-line bg-surface' : 'border-line bg-surface'
+          }`}
+        >
+          <div className="flex items-start gap-2">
+            <span className="min-w-0 flex-1 text-[13px] font-semibold text-ink">{c.nome}</span>
+            <PillStatus status={c.status} />
+          </div>
+          <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
             {c.badges.map((b, i) => (
               <Badge key={i} label={b.label} tone={b.tone} />
             ))}
-            <span className="ml-auto font-mono text-[10px] text-faint">{c.campanha}</span>
+            <span className="ml-auto text-[10px] text-faint">{c.campanha}</span>
           </div>
           <p className="mt-2 text-[12px] leading-relaxed text-muted">{c.copy}</p>
           <p className="mt-1 font-mono text-[11px] text-faint">CTA: {c.cta}</p>
@@ -213,7 +241,7 @@ function Pauta({ a }: { a: AgendaArtifact }) {
       <div className="mt-3 space-y-4">
         {a.blocos.map((bloco, i) => (
           <div key={i}>
-            <h4 className="mb-1.5 font-mono text-[10px] uppercase tracking-wider text-faint">{bloco.titulo}</h4>
+            <h4 className="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">{bloco.titulo}</h4>
             <ul className="space-y-1.5">
               {bloco.itens.map((item, j) => (
                 <li key={j} className="flex gap-2">
@@ -231,8 +259,8 @@ function Pauta({ a }: { a: AgendaArtifact }) {
           </div>
         ))}
         {a.pendencias && a.pendencias.length > 0 && (
-          <div className="rounded border border-warn/40 bg-warn/[0.06] p-2.5">
-            <h4 className="mb-1.5 font-mono text-[10px] uppercase tracking-wider text-warn">
+          <div className="rounded-[10px] border border-warn-line bg-warn-soft p-2.5">
+            <h4 className="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-warn">
               decisões pendentes — travam a conta
             </h4>
             <ul className="space-y-1.5">
@@ -256,27 +284,27 @@ function Pauta({ a }: { a: AgendaArtifact }) {
 function DiffCta({ a }: { a: CtaDiffArtifact }) {
   return (
     <div className="grid gap-3 md:grid-cols-2">
-      <div className="rounded border border-line bg-surface-2 p-3">
-        <p className="mb-2 font-mono text-[10px] uppercase tracking-wider text-faint">no ar hoje</p>
+      <div className="rounded-[10px] border border-line bg-surface-2 p-3">
+        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-faint">no ar hoje</p>
         <p className="text-[13px] leading-relaxed text-muted">{a.copyAtual}</p>
-        <p className="mt-3 rounded border border-line-strong bg-surface-3 px-2 py-1 text-center font-mono text-[12px] text-muted line-through decoration-crit/70">
+        <p className="mt-3 rounded-md border border-line bg-surface-3 px-2 py-1 text-center font-mono text-[12px] text-muted line-through decoration-crit">
           {a.ctaAtual}
         </p>
         <p className="mt-2 font-mono text-[10px] text-faint">{a.criativoNome}</p>
       </div>
       <div className="space-y-2">
-        <p className="font-mono text-[10px] uppercase tracking-wider text-faint">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
           propostas ({a.propostas.length}) — nada vai ao ar sem aprovação
         </p>
         {a.propostas.map((p, i) => (
-          <div key={i} className="rounded border border-accent/35 bg-accent-soft/40 p-2.5">
+          <div key={i} className="rounded-[10px] border border-accent-line bg-accent-soft p-2.5">
             <p className="text-[13px] font-medium text-ink">{p.texto}</p>
             <p className="mt-1 text-[12px] leading-relaxed text-muted">
-              <span className="font-mono text-[10px] uppercase tracking-wider text-faint">testa · </span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-faint">testa · </span>
               {p.hipotese}
             </p>
             <p className="mt-0.5 text-[12px] leading-relaxed text-muted">
-              <span className="font-mono text-[10px] uppercase tracking-wider text-faint">porque · </span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-faint">porque · </span>
               {p.justificativa}
             </p>
           </div>
@@ -302,7 +330,7 @@ function Diagnostico({ a }: { a: DiagnosticArtifact }) {
         <Badge label={`confiança ${a.confianca}`} tone={tomConfianca[a.confianca]} />
       </div>
 
-      <h4 className="mt-4 mb-1.5 font-mono text-[10px] uppercase tracking-wider text-faint">causa-raiz</h4>
+      <h4 className="mt-4 mb-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">causa-raiz</h4>
       <ul className="space-y-2">
         {a.causaRaiz.map((f, i) => (
           <li key={i} className="border-l-2 border-line-strong pl-2.5">
@@ -313,7 +341,7 @@ function Diagnostico({ a }: { a: DiagnosticArtifact }) {
         ))}
       </ul>
 
-      <h4 className="mt-4 mb-1.5 font-mono text-[10px] uppercase tracking-wider text-faint">
+      <h4 className="mt-4 mb-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">
         hipóteses testadas e descartadas
       </h4>
       <ul className="space-y-1">
@@ -324,7 +352,7 @@ function Diagnostico({ a }: { a: DiagnosticArtifact }) {
         ))}
       </ul>
 
-      <h4 className="mt-4 mb-1.5 font-mono text-[10px] uppercase tracking-wider text-faint">próximos passos</h4>
+      <h4 className="mt-4 mb-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-accent">próximos passos</h4>
       <ul className="space-y-1.5">
         {a.proximosPassos.map((p, i) => (
           <li key={i} className="flex flex-wrap items-center gap-2">
@@ -355,10 +383,10 @@ function Corpo({ a }: { a: StageArtifact }) {
 
 function Cartao({ a }: { a: StageArtifact }) {
   return (
-    <article className="rounded-md border border-line bg-surface">
+    <article className="overflow-hidden rounded-xl border border-line bg-surface">
       <header className="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-line px-4 py-2.5">
-        <h3 className="text-[14px] font-medium text-ink">{a.title}</h3>
-        <span className="rounded border border-line-strong px-1.5 py-0.5 font-mono text-[10px] text-faint">
+        <h3 className="text-[14px] font-semibold text-ink">{a.title}</h3>
+        <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[10px] font-semibold leading-4 text-accent-ink">
           {KIND_LABEL[a.kind]}
         </span>
         <span className="ml-auto font-mono text-[10px] text-faint">{dataHora.format(new Date(a.createdAt))}</span>
@@ -367,14 +395,14 @@ function Cartao({ a }: { a: StageArtifact }) {
         <Corpo a={a} />
         {a.evidence && a.evidence.length > 0 && (
           <div className="mt-3 flex flex-wrap items-center gap-1.5 border-t border-line pt-2">
-            <span className="font-mono text-[10px] uppercase tracking-wider text-faint">evidência</span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-faint">evidência</span>
             {a.evidence.map((id) => (
               <button
                 key={id}
                 type="button"
                 onClick={() => pularPara(id)}
                 title="Mostrar este evento no trace"
-                className="rounded border border-line-strong px-1.5 py-0.5 font-mono text-[10px] text-muted hover:border-accent hover:text-accent"
+                className="rounded-full border border-line px-2 py-0.5 font-mono text-[10px] text-muted transition-colors hover:border-accent-line hover:bg-accent-soft hover:text-accent-ink"
               >
                 {id}
               </button>
@@ -389,19 +417,22 @@ function Cartao({ a }: { a: StageArtifact }) {
 // ---------------------------------------------------------------------------
 
 export function Stage({ artifacts }: { artifacts: readonly StageArtifact[] }) {
+  const titulo = artifacts.length === 1 ? artifacts[0].title : 'Artefatos do turno';
   return (
-    <div className="flex h-full flex-col">
-      <header className="flex items-baseline gap-2 border-b border-line px-5 py-3">
-        <h2 className="font-mono text-[11px] uppercase tracking-wider text-muted">Palco</h2>
-        <p className="text-[12px] text-faint">o que o agente produziu neste turno</p>
-        {artifacts.length > 0 && (
-          <span className="ml-auto font-mono text-[11px] text-faint">
-            {artifacts.length} artefato{artifacts.length > 1 ? 's' : ''}
-          </span>
-        )}
+    <div className="flex h-full flex-col bg-surface">
+      <header className="flex items-end gap-3 border-b border-line px-5 py-3">
+        <div className="min-w-0">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">Palco</p>
+          <h2 className="truncate text-[15px] font-semibold leading-tight tracking-tight text-ink">{titulo}</h2>
+        </div>
+        <p className="ml-auto shrink-0 text-[11px] text-faint">
+          {artifacts.length > 0
+            ? `${artifacts.length} artefato${artifacts.length > 1 ? 's' : ''}`
+            : 'o que o agente produziu neste turno'}
+        </p>
       </header>
 
-      <div className="flex-1 overflow-y-auto px-5 py-4">
+      <div className="flex-1 overflow-y-auto bg-bg px-5 py-4">
         {artifacts.length === 0 ? (
           <div className="mx-auto max-w-md py-16">
             <p className="text-[15px] leading-relaxed text-muted">
@@ -412,7 +443,7 @@ export function Stage({ artifacts }: { artifacts: readonly StageArtifact[] }) {
               O chat à direita explica; aqui fica o que dá para levar para a reunião. Cada artefato aponta para os
               eventos do trace que o sustentam — clicar na evidência pula até a linha correspondente.
             </p>
-            <p className="mt-6 font-mono text-[11px] text-faint">
+            <p className="mt-6 text-[11px] text-faint">
               escolha um dos 4 pedidos sugeridos no chat para começar
             </p>
           </div>
