@@ -5,11 +5,13 @@
  *
  * A interface não pode contradizer o paper: se confirmar for o caminho de menor
  * resistência visual, o gate vira teatro. Por isso:
- *  - o botão neutro (e o foco inicial) é o de NEGAR — negar é caminho normal do grafo;
+ *  - o botão neutro é o de NEGAR — negar é caminho normal do grafo;
+ *  - o foco inicial vai para o PAINEL, nunca para um botão: com foco num botão,
+ *    uma barra de espaço para rolar a leitura já dispararia a decisão;
  *  - confirmar só habilita depois que o gestor marca que leu o efeito;
  *  - ação irreversível ganha aviso próprio, não a mesma moldura de uma reversível.
  */
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { PendingAction, PermissionDecision } from '@/harness/types';
 
 interface Props {
@@ -18,6 +20,8 @@ interface Props {
 }
 
 export function ConfirmDialog({ acao, onDecidir }: Props) {
+  const painel = useRef<HTMLElement>(null);
+  useEffect(() => painel.current?.focus(), []);
   const [leu, setLeu] = useState(false);
   const [comentario, setComentario] = useState('');
   const { preview } = acao;
@@ -27,6 +31,8 @@ export function ConfirmDialog({ acao, onDecidir }: Props) {
 
   return (
     <section
+      ref={painel}
+      tabIndex={-1}
       role="alertdialog"
       aria-labelledby="gate-titulo"
       className="rounded-md border border-warn/60 bg-warn/[0.06]"
@@ -104,7 +110,6 @@ export function ConfirmDialog({ acao, onDecidir }: Props) {
         <div className="mt-3 flex flex-wrap items-center gap-2">
           <button
             type="button"
-            autoFocus
             onClick={() => decidir('negar')}
             className="rounded border border-line-strong bg-surface-3 px-3.5 py-1.5 text-[13px] text-ink hover:border-muted"
           >
