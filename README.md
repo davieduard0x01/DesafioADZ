@@ -6,7 +6,7 @@ Desafio técnico AdzHub · Núcleo Fundacional · 2026.
 
 - Paper: `paper/main.pdf`
 - Demo: **https://desafio-adz-harness.vercel.app** (sem login; sem chave roda replay determinístico)
-- Plano de execução: `PLAN.md` · Checklist: `docs/CHECKLIST.md`
+- Checklist de entrega: `docs/CHECKLIST.md`
 
 ## Rodar local
 
